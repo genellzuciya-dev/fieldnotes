@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Field Notes — Genell Zuciya</title>
+<meta name="description" content="Photographs by Genell Zuciya. Documentarian and citizen scientist." />
+<meta property="og:title" content="Field Notes — Genell Zuciya" />
+<meta property="og:description" content="Photographs by Genell Zuciya. Documentarian and citizen scientist." />
+<meta property="og:image" content="images/globemallow-vista.jpg" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+*{ box-sizing:border-box; margin:0; padding:0; }
+:root{
+  --ink:#0A070C;
+  --ink2:#150E17;
+  --bone:#F4F0EA;
+  --muted:#8F7F8C;
+  --fuchsia:#FF4FD8;
+  --ember:#FF7A33;
+  --border:rgba(255,79,216,0.16);
+}
+html{ scroll-behavior:smooth; }
+body{ background:var(--ink); color:var(--bone); font-family:'Instrument Serif',Georgia,serif; overflow-x:hidden; }
+
+/* ---------- NAV ---------- */
+nav{ position:fixed; inset:0 0 auto 0; z-index:40; display:flex; align-items:center;
+     justify-content:space-between; padding:1.25rem 3rem;
+     background:linear-gradient(to bottom, rgba(10,7,12,0.9), rgba(10,7,12,0)); }
+.logo{ font-family:'Syne',sans-serif; font-weight:800; font-size:0.92rem; letter-spacing:0.18em;
+       text-transform:uppercase; display:flex; align-items:center; gap:0.6rem; }
+.dot{ width:7px; height:7px; border-radius:50%; background:var(--fuchsia); animation:pulse 2.6s infinite; }
+@keyframes pulse{ 0%,100%{ background:var(--fuchsia); } 50%{ background:var(--ember); } }
+.nav-links{ display:flex; gap:1.9rem; list-style:none; }
+.nav-links a{ font-family:'Syne',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:0.22em;
+              text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .2s; }
+.nav-links a:hover,.nav-links a:focus-visible{ color:var(--ember); }
+
+/* ---------- HERO ---------- */
+.hero{ position:relative; min-height:100vh; display:grid;
+       grid-template-columns:1.15fr 0.85fr; align-items:stretch; overflow:hidden; }
+/* left: type + data */
+.hero-left{ position:relative; z-index:3; display:flex; flex-direction:column;
+            justify-content:flex-end; padding:8rem 2.5rem 3.2rem 3rem; }
+.hero-role{ font-family:'Space Mono',monospace; font-size:0.64rem; letter-spacing:0.3em;
+            text-transform:uppercase; display:block; margin-bottom:1.1rem; color:var(--fuchsia); }
+.hero-role b{ color:var(--ember); font-weight:400; }
+.hero-name{ font-family:'Syne',sans-serif; font-weight:800; letter-spacing:-0.03em; line-height:0.9;
+            font-size:clamp(2.6rem,7vw,5.4rem); }
+.hero-name em{ font-family:'Instrument Serif',serif; font-style:italic; font-weight:400;
+               color:var(--ember); letter-spacing:-0.01em; }
+.hero-line{ font-family:'Instrument Serif',serif; font-size:1.05rem; line-height:1.7;
+            color:var(--muted); max-width:34ch; margin-top:1.6rem; }
+.hero-line b{ color:var(--bone); font-weight:400; }
+
+/* field-log strip: the signature */
+.log{ display:grid; grid-template-columns:repeat(3,auto); gap:0 2.6rem; margin-top:2.8rem;
+      padding-top:1.4rem; border-top:1px solid var(--border); justify-content:start; }
+.log-k{ font-family:'Space Mono',monospace; font-size:0.52rem; letter-spacing:0.24em;
+        text-transform:uppercase; color:var(--ember); display:block; margin-bottom:0.35rem; }
+.log-v{ font-family:'Syne',sans-serif; font-weight:700; font-size:0.95rem; color:var(--bone); }
+
+/* right: the photograph, held as a plate not a wallpaper */
+.hero-right{ position:relative; z-index:2; }
+.hero-plate{ position:absolute; inset:3rem 3rem 6rem 0; overflow:hidden; background:var(--ink2); }
+.hero-plate img{ width:100%; height:100%; object-fit:cover; object-position:center 30%;
+                 transform:scale(1.04); }
+.hero-plate::after{ content:''; position:absolute; inset:0;
+  background:linear-gradient(105deg, var(--ink) 0%, rgba(10,7,12,0.55) 22%, rgba(10,7,12,0) 60%); }
+/* offset detail chip overlapping the plate — echoes the collage grammar */
+.hero-chip{ position:absolute; width:38%; aspect-ratio:1/1; left:-9%; bottom:2.5rem;
+            overflow:hidden; background:var(--ink2); z-index:3;
+            box-shadow:0 20px 60px rgba(0,0,0,0.6); }
+.hero-chip img{ width:100%; height:100%; object-fit:cover; }
+.hero-chip-tag{ position:absolute; left:0; bottom:0; right:0; padding:1.4rem 0.8rem 0.6rem;
+  background:linear-gradient(to top, rgba(10,7,12,0.9), rgba(10,7,12,0));
+  font-family:'Space Mono',monospace; font-size:0.48rem; letter-spacing:0.2em;
+  text-transform:uppercase; color:var(--ember); }
+
+.scroll-hint{ position:absolute; right:1.1rem; bottom:3.2rem; z-index:4; writing-mode:vertical-rl;
+  font-family:'Space Mono',monospace; font-size:0.56rem; letter-spacing:0.3em;
+  text-transform:uppercase; color:var(--muted); }
+/* fine film grain over the whole hero */
+.grain{ position:absolute; inset:0; z-index:5; pointer-events:none; opacity:0.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* hero entrance */
+.hero .an{ opacity:0; }
+.hero.ready .an{ opacity:1; }
+.hero .an-1{ transition:opacity .9s ease .05s, transform .9s cubic-bezier(.2,.7,.3,1) .05s; transform:translateY(18px); }
+.hero .an-2{ transition:opacity 1s ease .18s, transform 1s cubic-bezier(.2,.7,.3,1) .18s; transform:translateY(24px); }
+.hero .an-3{ transition:opacity 1s ease .34s, transform 1s cubic-bezier(.2,.7,.3,1) .34s; transform:translate(26px,20px) scale(.98); }
+.hero .an-4{ transition:opacity 1s ease .52s, transform 1s cubic-bezier(.2,.7,.3,1) .52s; transform:translate(-24px,22px) scale(.94); }
+.hero.ready .an-1,.hero.ready .an-2,.hero.ready .an-3,.hero.ready .an-4{ transform:none; }
+
+/* ---------- PLATE GRID ---------- */
+main{ padding:8rem 3rem 5rem; max-width:1500px; margin:0 auto; }
+.plates{ display:grid; grid-template-columns:repeat(2,1fr); gap:7rem 5rem; }
+
+.plate{ position:relative; }
+/* the collage stage: wide image + overlapping detail */
+.stage{ position:relative; padding:0 0 5.5rem 0; }
+.pic{ position:relative; overflow:hidden; background:var(--ink2); cursor:zoom-in; display:block;
+      border:0; padding:0; width:100%; }
+.pic img{ display:block; width:100%; height:100%; object-fit:cover;
+          transition:transform 1s cubic-bezier(.2,.7,.3,1), filter .5s; }
+.pic:hover img,.pic:focus-visible img{ transform:scale(1.04); }
+.pic:focus-visible{ outline:2px solid var(--ember); outline-offset:3px; }
+
+.pic-wide{ width:74%; aspect-ratio:4/5; }
+.plate.land .pic-wide{ aspect-ratio:3/2; }
+
+/* the detail sits offset, overlapping the wide */
+.pic-det{ position:absolute; width:44%; aspect-ratio:1/1; right:0; bottom:2.2rem;
+          box-shadow:0 18px 50px rgba(0,0,0,0.55); }
+.plate.flip .pic-wide{ margin-left:26%; }
+.plate.flip .pic-det{ right:auto; left:0; bottom:auto; top:2.2rem; }
+
+/* caption */
+.cap{ margin-top:1.6rem; max-width:88%; }
+.plate.flip .cap{ margin-left:auto; }
+.cap-rule{ display:flex; flex-direction:column; gap:3px; margin-bottom:0.9rem; }
+.cap-rule span{ height:1px; display:block; }
+.cap-rule span:nth-child(1){ width:100%; background:var(--fuchsia); opacity:.5; }
+.cap-rule span:nth-child(2){ width:62%; background:var(--ember); opacity:.45; }
+.cap-rule span:nth-child(3){ width:84%; background:var(--fuchsia); opacity:.2; }
+.cap-idx{ font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.24em;
+          color:var(--ember); text-transform:uppercase; }
+.cap-name{ font-family:'Syne',sans-serif; font-weight:700; font-size:1.15rem;
+           margin:0.5rem 0 0.15rem; letter-spacing:-0.01em; }
+.cap-latin{ font-family:'Instrument Serif',serif; font-style:italic; font-size:1rem;
+            color:var(--fuchsia); display:block; margin-bottom:0.7rem; }
+.cap-text{ font-family:'Instrument Serif',serif; font-size:0.98rem; line-height:1.75;
+           color:var(--muted); }
+.cap-text b{ color:var(--bone); font-weight:400; }
+.cap-meta{ font-family:'Space Mono',monospace; font-size:0.54rem; letter-spacing:0.18em;
+           text-transform:uppercase; color:var(--muted); opacity:.7; display:block; margin-top:0.9rem; }
+
+/* ---------- SCROLL ASSEMBLY ---------- */
+.an{ opacity:0; transition:opacity 1s cubic-bezier(.2,.7,.3,1), transform 1s cubic-bezier(.2,.7,.3,1); }
+.an-wide{ transform:translate(-26px, 30px) scale(0.97); }
+.an-det{ transform:translate(30px, 26px) scale(0.94); }
+.an-cap{ transform:translateY(22px); }
+.plate.flip .an-wide{ transform:translate(26px, 30px) scale(0.97); }
+.plate.flip .an-det{ transform:translate(-30px, 26px) scale(0.94); }
+.visible .an, .an.visible{ opacity:1; transform:none; }
+.visible .an-det{ transition-delay:0.18s; }
+.visible .an-cap{ transition-delay:0.32s; }
+
+/* ---------- PENDING ---------- */
+.pending{ grid-column:1 / -1; border:1px dashed var(--border); padding:3rem; text-align:center; }
+.pending .cap-name{ margin:0 0 0.4rem; }
+.pending p{ font-family:'Space Mono',monospace; font-size:0.58rem; letter-spacing:0.22em;
+            text-transform:uppercase; color:var(--ember); }
+
+/* ---------- FOOTER ---------- */
+footer{ border-top:1px solid var(--border); background:var(--ink2); padding:4rem 3rem 3rem;
+        display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:2rem; }
+.links{ display:flex; gap:0.85rem; flex-wrap:wrap; }
+.btn{ font-family:'Syne',sans-serif; font-size:0.66rem; font-weight:700; letter-spacing:0.18em;
+      text-transform:uppercase; text-decoration:none; padding:0.85rem 1.5rem;
+      border:1px solid var(--fuchsia); color:var(--fuchsia); transition:.25s; }
+.btn:hover,.btn:focus-visible{ background:var(--fuchsia); color:var(--ink); }
+.btn-solid{ background:var(--ember); border-color:var(--ember); color:var(--ink); }
+.btn-solid:hover,.btn-solid:focus-visible{ background:#E0621F; border-color:#E0621F; color:var(--ink); }
+.copy{ font-family:'Space Mono',monospace; font-size:0.55rem; letter-spacing:0.1em; color:var(--muted); opacity:.6; }
+
+/* ---------- LIGHTBOX ---------- */
+.lb{ position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center;
+     background:rgba(10,7,12,0.975); padding:3rem; cursor:zoom-out; }
+.lb.open{ display:flex; }
+.lb img{ max-width:100%; max-height:84vh; object-fit:contain; }
+.lb-cap{ position:absolute; bottom:1.5rem; left:0; right:0; text-align:center;
+  font-family:'Space Mono',monospace; font-size:0.56rem; letter-spacing:0.2em;
+  text-transform:uppercase; color:var(--muted); }
+.lb-close{ position:absolute; top:1.3rem; right:2rem; background:none; border:0; cursor:pointer;
+  font-family:'Syne',sans-serif; font-size:1.3rem; color:var(--ember); }
+
+@media(prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  .an{ opacity:1 !important; transform:none !important; transition:none; }
+  .pic img{ transition:none; }
+  .dot{ animation:none; }
+}
+@media(max-width:980px){
+  main{ padding:5rem 1.3rem 3rem; }
+  .plates{ grid-template-columns:1fr; gap:4.5rem; }
+  .hero{ grid-template-columns:1fr; min-height:auto; }
+  .hero-left{ order:2; padding:2.5rem 1.5rem 3rem; }
+  .hero-right{ order:1; height:58vh; min-height:340px; }
+  .hero-plate{ inset:5rem 1.5rem 0 1.5rem; }
+  .hero-chip{ width:34%; left:auto; right:1.5rem; bottom:-2.5rem; }
+  .log{ gap:0 1.6rem; }
+}
+@media(max-width:640px){
+  nav{ padding:1.05rem 1.3rem; }
+  .nav-links{ gap:1rem; }
+  .hero-cap{ left:1.3rem; bottom:2.2rem; }
+  .scroll-hint{ display:none; }
+  .stage{ padding-bottom:4rem; }
+  .pic-wide{ width:80%; }
+  .plate.flip .pic-wide{ margin-left:20%; }
+  .pic-det{ width:46%; bottom:1.2rem; }
+  .plate.flip .pic-det{ top:1.2rem; }
+  .cap{ max-width:100%; }
+  footer{ padding:3rem 1.3rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span class="dot"></span>Field Notes</div>
+  <ul class="nav-links">
+    <li><a href="#plates">Photographs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero" id="hero">
+  <div class="hero-left">
+    <span class="hero-role an an-1">Documentarian <b>&amp;</b> Citizen Scientist</span>
+    <h1 class="hero-name an an-1">Genell<br/>Zuciya</h1>
+    <p class="hero-line an an-2">Photographs from landscapes that keep <b>deep time</b> — and the living things that carry on regardless.</p>
+    <div class="log an an-2">
+      <div>
+        <span class="log-k">Plates</span>
+        <span class="log-v">05</span>
+      </div>
+      <div>
+        <span class="log-k">Oldest ground</span>
+        <span class="log-v">~220 Ma</span>
+      </div>
+      <div>
+        <span class="log-k">Base</span>
+        <span class="log-v">New Mexico</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-plate an an-3">
+      <img src="images/globemallow-vista.jpg" alt="An orange globemallow bloom in the foreground with the banded red and grey badlands of the Painted Desert receding behind it." />
+    </div>
+    <div class="hero-chip an an-4">
+      <img src="images/det-barnacle-plates.jpg" alt="Macro detail of overlapping cream and rust-red gooseneck barnacle shell plates." />
+      <span class="hero-chip-tag">Pollicipes sp.</span>
+    </div>
+  </div>
+
+  <div class="grain"></div>
+  <div class="scroll-hint">Scroll</div>
+</div>
+
+<main id="plates">
+<div class="plates">
+
+  <!-- 01 -->
+  <article class="plate">
+    <div class="stage">
+      <button class="pic pic-wide an an-wide" data-full="images/globemallow-vista.jpg" data-cap="Globemallow over the Chinle Formation · Petrified Forest NP, Arizona">
+        <img src="images/globemallow-vista.jpg" loading="lazy"
+             alt="An orange globemallow bloom in the foreground with the banded red and grey badlands of the Painted Desert receding behind it." />
+      </button>
+      <button class="pic pic-det an an-det" data-full="images/det-globemallow-bloom.jpg" data-cap="Globemallow, detail · Sphaeralcea sp.">
+        <img src="images/det-globemallow-bloom.jpg" loading="lazy"
+             alt="Close detail of apricot-orange globemallow flowers and buds on a slender stalk." />
+      </button>
+    </div>
+    <div class="cap an an-cap">
+      <div class="cap-rule"><span></span><span></span><span></span></div>
+      <span class="cap-idx">01 — Painted Desert, AZ</span>
+      <h2 class="cap-name">Globemallow &amp; badlands</h2>
+      <span class="cap-latin">Sphaeralcea sp.</span>
+      <p class="cap-text">The banded hills behind the bloom are <b>Late Triassic mudstone</b> — laid down when this desert was a humid floodplain near the equator. The red bands are oxidized iron; the grey ones aren't. That color difference is a climate signal, roughly 220 million years old.</p>
+      <span class="cap-meta">Chinle Formation · ~220 Ma</span>
+    </div>
+  </article>
+
+  <!-- 02 -->
+  <article class="plate flip">
+    <div class="stage">
+      <button class="pic pic-wide an an-wide" data-full="images/globemallow-stalk.jpg" data-cap="Globemallow in bloom · Petrified Forest NP, Arizona">
+        <img src="images/globemallow-stalk.jpg" loading="lazy"
+             alt="A tall globemallow stalk covered in apricot-orange blooms against the eroded mesa and open sky of the Painted Desert." />
+      </button>
+      <button class="pic pic-det an an-det" data-full="images/det-strata.jpg" data-cap="Chinle Formation strata, detail">
+        <img src="images/det-strata.jpg" loading="lazy"
+             alt="Close view of the horizontally banded red, lavender and grey badlands of the Chinle Formation." />
+      </button>
+    </div>
+    <div class="cap an an-cap">
+      <div class="cap-rule"><span></span><span></span><span></span></div>
+      <span class="cap-idx">02 — Painted Desert, AZ</span>
+      <h2 class="cap-name">First on broken ground</h2>
+      <span class="cap-latin">Sphaeralcea sp.</span>
+      <p class="cap-text">Globemallow is a <b>pioneer species</b> — it takes the disturbed, mineral-poor ground nothing else wants. Here it is doing that on the eroded remains of a wetter world, indifferent to the fact.</p>
+      <span class="cap-meta">Arid adapted · disturbed ground</span>
+    </div>
+  </article>
+
+  <!-- 03 -->
+  <article class="plate land">
+    <div class="stage">
+      <button class="pic pic-wide an an-wide" data-full="images/cardinal.jpg" data-cap="Red-crested cardinal · Hawaiʻi">
+        <img src="images/cardinal.jpg" loading="lazy"
+             alt="A red-crested cardinal with a scarlet head, white breast and grey wings perched on a vine in dappled canopy light." />
+      </button>
+      <button class="pic pic-det an an-det" data-full="images/det-cardinal-crest.jpg" data-cap="Red-crested cardinal, detail">
+        <img src="images/det-cardinal-crest.jpg" loading="lazy"
+             alt="Close detail of the cardinal's brilliant scarlet crest and pale conical beak." />
+      </button>
+    </div>
+    <div class="cap an an-cap">
+      <div class="cap-rule"><span></span><span></span><span></span></div>
+      <span class="cap-idx">03 — Hawaiʻi [TK: island]</span>
+      <h2 class="cap-name">Red-crested cardinal</h2>
+      <span class="cap-latin">Paroaria coronata</span>
+      <p class="cap-text">Native to <b>South America</b>, not to this canopy. Introduced in the 1930s and entirely at home now. Photographing it is photographing a novel ecosystem assembling itself in real time, out of pieces we moved around.</p>
+      <span class="cap-meta">Introduced c. 1930s · established</span>
+    </div>
+  </article>
+
+  <!-- 04 -->
+  <article class="plate flip">
+    <div class="stage">
+      <button class="pic pic-wide an an-wide" data-full="images/myna.jpg" data-cap="Common myna · Hawaiʻi">
+        <img src="images/myna.jpg" loading="lazy"
+             alt="A common myna, brown-bodied with a black head and bright yellow beak and eye patch, perched on a power line against a clear sky." />
+      </button>
+      <button class="pic pic-det an an-det" data-full="images/det-myna-head.jpg" data-cap="Common myna, detail">
+        <img src="images/det-myna-head.jpg" loading="lazy"
+             alt="Close detail of the myna's black head, yellow beak and bare yellow skin behind the eye." />
+      </button>
+    </div>
+    <div class="cap an an-cap">
+      <div class="cap-rule"><span></span><span></span><span></span></div>
+      <span class="cap-idx">04 — Hawaiʻi [TK: island]</span>
+      <h2 class="cap-name">Common myna</h2>
+      <span class="cap-latin">Acridotheres tristis</span>
+      <p class="cap-text">Brought here in <b>1865</b> to eat armyworms in the cane fields — a biological control that worked, then kept going. It is now one of the most successful birds on earth, and it is sitting on our wire, watching.</p>
+      <span class="cap-meta">Introduced 1865 · established</span>
+    </div>
+  </article>
+
+  <!-- 05 -->
+  <article class="plate land">
+    <div class="stage">
+      <button class="pic pic-wide an an-wide" data-full="images/barnacles.jpg" data-cap="Gooseneck barnacle colony, surf zone">
+        <img src="images/barnacles.jpg" loading="lazy"
+             alt="A dense colony of gooseneck barnacles with cream and rust-red plates clinging to dark wet rock, sea foam washing below." />
+      </button>
+      <button class="pic pic-det an an-det" data-full="images/det-barnacle-plates.jpg" data-cap="Gooseneck barnacle plates, detail">
+        <img src="images/det-barnacle-plates.jpg" loading="lazy"
+             alt="Macro detail of overlapping cream and rust-red barnacle shell plates outlined in black." />
+      </button>
+    </div>
+    <div class="cap an an-cap">
+      <div class="cap-rule"><span></span><span></span><span></span></div>
+      <span class="cap-idx">05 — [TK: coast]</span>
+      <h2 class="cap-name">Gooseneck barnacles</h2>
+      <span class="cap-latin">Pollicipes sp.</span>
+      <p class="cap-text">They live where every wave is a hydraulic event that would tear most animals off the rock. They hold on with a <b>protein cement</b> that materials scientists have been trying to reverse-engineer for decades — and they feed by reaching into the water that is trying to kill them.</p>
+      <span class="cap-meta">Surf zone · wave-swept · filter feeder</span>
+    </div>
+  </article>
+
+  <!-- PENDING -->
+  <div class="pending an an-cap">
+    <h2 class="cap-name">Nova Scotia &amp; Newfoundland</h2>
+    <p>In process</p>
+  </div>
+
+</div>
+</main>
+
+<footer id="contact">
+  <div>
+    <div class="cap-rule" style="max-width:220px"><span></span><span></span><span></span></div>
+    <div class="links" style="margin-top:1.3rem">
+      <a class="btn btn-solid" href="mailto:genellzuciya@gmail.com">Email</a>
+      <a class="btn" href="https://www.ilovephotons.com/" target="_blank" rel="noopener">Design Work</a>
+      <a class="btn" href="https://www.nexuslabspace.com/" target="_blank" rel="noopener">Nexus Lab Space</a>
+    </div>
+  </div>
+  <div class="copy">&copy; 2026 Genell Zuciya &middot; New Mexico</div>
+</footer>
+
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose" aria-label="Close image">&#10005;</button>
+  <img id="lbImg" src="" alt="" />
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+/* hero entrance on load */
+requestAnimationFrame(function(){
+  requestAnimationFrame(function(){ document.getElementById('hero').classList.add('ready'); });
+});
+
+/* scroll assembly: plates animate their parts in, staggered */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold:0.15, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.plate, .pending').forEach(function(el){ io.observe(el); });
+
+/* lightbox */
+var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'),
+    lbCap=document.getElementById('lbCap'), lbClose=document.getElementById('lbClose'), last=null;
+function openLb(btn){
+  last=btn;
+  lbImg.src=btn.dataset.full;
+  lbImg.alt=btn.querySelector('img').alt;
+  lbCap.textContent=btn.dataset.cap||'';
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+  lbClose.focus();
+}
+function closeLb(){
+  lb.classList.remove('open'); lbImg.src=''; document.body.style.overflow='';
+  if(last) last.focus();
+}
+document.querySelectorAll('.pic').forEach(function(btn){
+  btn.addEventListener('click', function(){ openLb(btn); });
+});
+lb.addEventListener('click', closeLb);
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape' && lb.classList.contains('open')) closeLb();
+});
+</script>
+</body>
+</html>
