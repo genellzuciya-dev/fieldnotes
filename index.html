@@ -352,19 +352,6 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
     </div>
   </section>
 
-  <!-- SLATE -->
-  <section class="band" id="s-slate">
-    <div class="band-head bc-slate"><span class="band-chip"></span><span class="band-name">Slate</span><span class="band-hex">#8A97A6</span></div>
-    <div class="frames">
-      <figure class="f-full an">
-        <button class="shot" data-full="images/doc-canal.jpg" data-cap="Canal &middot; Xinchang">
-          <img src="images/doc-canal.jpg" loading="lazy" alt="A boatman poles a small craft down a narrow canal between old timber and white-walled buildings in Xinchang, reflections on still grey water." /></button>
-        <span class="cap"><span class="c-name">Poling the canal</span>
-          <span class="c-text">Xinchang is a Ming-and-Qing canal town an hour from the skyline — one of the last near Shanghai not fully remade for tourists. A boatman still poles the <b>grey water</b> between timber houses that have leaned over it for centuries.</span>
-          <span class="c-meta">Water town &middot; Xinchang</span></span>
-      </figure>
-    </div>
-  </section>
 </main>
 
 <div class="pending an">
@@ -395,7 +382,7 @@ document.querySelectorAll('.an').forEach(function(el){ io.observe(el); });
 
 var COLORS = {
   'f-red':'#E8402E','f-orange':'#FF7A33','f-green':'#8FBF3C','f-white':'#F4F0EA','f-blue':'#5B93DB','f-magenta':'#FF4FD8',
-  's-vermilion':'#E5502B','s-slate':'#8A97A6'
+  's-vermilion':'#E5502B'
 };
 var spy = new IntersectionObserver(function(es){
   es.forEach(function(e){
