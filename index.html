@@ -147,10 +147,11 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
              max-width:60ch; line-height:1.7; margin-bottom:2.2rem; }
 .hoofstrip{ padding:4.5rem 2.5rem 1rem; }
 @media(max-width:1000px){ .hoofstrip{ padding:3rem 1.3rem 0.5rem; } }
-.hoof-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+.hoof-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; max-width:560px; }
 .hoof-row figure{ margin:0; }
+.hoof-row .shot img{ aspect-ratio:4/3; object-fit:cover; }
 .hoof-row .cap{ margin-top:0.7rem; }
-@media(max-width:760px){ .hoof-row{ grid-template-columns:1fr; gap:2rem; } }
+@media(max-width:760px){ .hoof-row{ grid-template-columns:repeat(3,1fr); gap:0.5rem; max-width:100%; } }
 /* cap vertical/portrait photos so they never dominate */
 .shot img{ max-height:78vh; object-fit:cover; }
 .an.d2{ transition-delay:.32s; }
@@ -275,13 +276,6 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">A tape measure round his neck, a hand-cranked machine, and an armful of <b>wax-print cloth</b> — the whole shop the colour of the wall behind it. West African wax print carries its own language: patterns have names, and a well-chosen cloth says something the wearer means.</span>
           <span class="c-meta">Wax-print tailor &middot; Guinea, West Africa</span></span>
       </figure>
-      <figure class="wide an">
-        <button class="shot" data-full="images/doc-street.jpg" data-cap="Lane life &middot; Xinchang">
-          <img src="images/doc-street.jpg" loading="lazy" alt="An old lane in Xinchang: a woman sews at a machine in a doorway while an older woman in a green headscarf sits outside laughing, red and gold shop signs above." /></button>
-        <span class="cap"><span class="c-name">The seamstress and the laugh</span>
-          <span class="c-text">Two generations of a lane, a few feet apart — one at the sewing machine in the dark of the shop, one in the sun outside, <b>caught mid-laugh</b>. The work and the rest, in one frame.</span>
-          <span class="c-meta">Old town lane &middot; Xinchang</span></span>
-      </figure>
     </div>
   </section>
 
@@ -366,6 +360,13 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="s-slate">
     <div class="band-head" style="color:#8A97A6"><span class="band-chip"></span><span class="band-name">Slate</span><span class="band-hex">#8A97A6</span></div>
     <div class="frames">
+      <figure class="wide an">
+        <button class="shot" data-full="images/doc-street.jpg" data-cap="Lane life &middot; Xinchang">
+          <img src="images/doc-street.jpg" loading="lazy" alt="An old lane in Xinchang: a woman sews at a machine in a doorway while an older woman in a green headscarf sits outside laughing, red and gold shop signs above." /></button>
+        <span class="cap"><span class="c-name">The seamstress and the laugh</span>
+          <span class="c-text">Two generations of a lane, a few feet apart — one at the sewing machine in the dark of the shop, one in the sun outside, <b>caught mid-laugh</b>. The work and the rest, in one frame.</span>
+          <span class="c-meta">Old town lane &middot; Xinchang</span></span>
+      </figure>
       <figure class="wide an">
         <button class="shot" data-full="images/guinea-barber.jpg" data-cap="Barbershop &middot; Guinea, West Africa">
           <img src="images/guinea-barber.jpg" loading="lazy" alt="An open-air barbershop: one man waits in the foreground while a barber clippers another man&rsquo;s head, a hand-painted mirror and price list on the wall behind." /></button>
