@@ -73,16 +73,17 @@ nav{ position:fixed; inset:0 0 auto 0; z-index:50; display:flex; align-items:cen
 .bc-white{ color:var(--c-white); } .bc-blue{ color:var(--c-blue); } .bc-magenta{ color:var(--c-magenta); }
 .bc-vermilion{ color:var(--c-vermilion); } .bc-indigo{ color:var(--c-indigo); } .bc-slate{ color:var(--c-slate); }
 
-.frames{ display:grid; grid-template-columns:repeat(12,1fr); gap:2rem 1.4rem; align-items:start; }
+.frames{ display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
+         gap:2.5rem 1.6rem; align-items:start; }
 figure{ position:relative; margin:0; }
 .shot{ display:block; width:100%; border:0; padding:0; background:var(--ink2);
        overflow:hidden; cursor:zoom-in; }
-.shot img{ display:block; width:100%; height:auto; transition:transform 1.1s cubic-bezier(.2,.7,.3,1); }
+.shot img{ display:block; width:100%; height:auto; transition:transform 1s cubic-bezier(.2,.7,.3,1); }
 .shot:hover img, .shot:focus-visible img{ transform:scale(1.03); }
 .shot:focus-visible{ outline:2px solid currentColor; outline-offset:4px; }
-.f-lg{ grid-column:span 7; } .f-md{ grid-column:span 5; } .f-xl{ grid-column:span 8; }
-.f-sm{ grid-column:span 4; } .f-full{ grid-column:1 / -1; }
-.drop{ margin-top:6rem; } .lap-l{ margin-left:-3rem; z-index:2; }
+/* optional emphasis: a photo can span two columns when it deserves the room */
+figure.wide{ grid-column:span 2; }
+@media(max-width:760px){ figure.wide{ grid-column:auto; } }
 
 .cap{ display:block; margin-top:1.2rem; }
 .c-name{ font-family:'Syne',sans-serif; font-weight:700; font-size:1.02rem; display:block;
@@ -96,11 +97,10 @@ figure{ position:relative; margin:0; }
          text-transform:uppercase; color:var(--muted); opacity:0.65; display:block; margin-top:0.7rem; }
 
 /* portrait interludes — you, working */
-.interlude{ grid-column:1 / -1; display:grid; grid-template-columns:repeat(12,1fr);
+.interlude{ grid-column:1 / -1; display:grid; grid-template-columns:1.4fr 1fr;
             gap:1.6rem; align-items:center; margin:1rem 0; }
-.interlude figure{ grid-column:span 7; }
-.interlude .who{ grid-column:span 5; }
-.interlude.right figure{ order:2; }
+.interlude figure{ grid-column:auto; }
+.interlude .who{ grid-column:auto; }
 .who-tag{ font-family:'Space Mono',monospace; font-size:0.58rem; letter-spacing:0.24em;
           text-transform:uppercase; color:var(--accent); display:block; margin-bottom:0.7rem; }
 .who-text{ font-family:'Instrument Serif',serif; font-size:1.1rem; line-height:1.65; color:var(--bone); }
@@ -143,9 +143,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
 }
 @media(max-width:1000px){
   .band{ padding:4rem 1.3rem; } .part{ padding:5rem 1.3rem 0.5rem; }
-  .frames{ grid-template-columns:1fr; gap:3.5rem; }
-  .f-lg,.f-md,.f-xl,.f-sm,.f-full{ grid-column:1 / -1; }
-  .drop{ margin-top:0; } .lap-l{ margin-left:0; }
+  .frames{ grid-template-columns:1fr; gap:3rem; }
   .interlude{ grid-template-columns:1fr; gap:1.5rem; }
   .interlude figure,.interlude .who{ grid-column:1 / -1; }
   .interlude.right figure{ order:0; }
@@ -196,19 +194,26 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="f-red">
     <div class="band-head bc-red"><span class="band-chip"></span><span class="band-name">Scarlet</span><span class="band-hex">#E8402E</span></div>
     <div class="frames">
-      <figure class="f-xl an">
+      <figure class="wide an">
         <button class="shot" data-full="images/barnacles.jpg" data-cap="Gooseneck barnacles &middot; Pollicipes sp.">
           <img src="images/barnacles.jpg" loading="lazy" alt="A dense colony of gooseneck barnacles with cream and rust-red plates on dark wet rock, sea foam below." /></button>
         <span class="cap"><span class="c-name">Gooseneck barnacles</span><span class="c-latin">Pollicipes sp.</span>
           <span class="c-text">They live where every wave would tear most animals off the rock. They hold on with a <b>protein cement</b> materials scientists still cannot reproduce, and feed by reaching into the water that is trying to kill them.</span>
-          <span class="c-meta">Surf zone &middot; [TK: coast]</span></span>
+          <span class="c-meta">Surf zone &middot; Pacific coast</span></span>
       </figure>
-      <figure class="f-sm drop an d1">
+      <figure class="an d1">
         <button class="shot" data-full="images/cardinal.jpg" data-cap="Red-crested cardinal &middot; Paroaria coronata">
           <img src="images/cardinal.jpg" loading="lazy" alt="A red-crested cardinal with a scarlet head, white breast and grey wings on a vine in dappled light." /></button>
         <span class="cap"><span class="c-name">Red-crested cardinal</span><span class="c-latin">Paroaria coronata</span>
           <span class="c-text">The same red, an ocean away and made of feathers instead of shell. Native to <b>South America</b>, introduced in the 1930s, entirely at home now.</span>
-          <span class="c-meta">Introduced c. 1930s &middot; Hawai&#699;i [TK: island]</span></span>
+          <span class="c-meta">Introduced c. 1930s &middot; O&#699;ahu, Hawai&#699;i</span></span>
+      </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/orb-weaver.jpg" data-cap="Golden silk orb-weaver &middot; Nephila sp.">
+          <img src="images/orb-weaver.jpg" loading="lazy" alt="A large golden silk orb-weaver hanging in its web, long black-and-yellow legs and a patterned rust-and-cream body, backlit gold silk behind it." /></button>
+        <span class="cap"><span class="c-name">Golden silk orb-weaver</span><span class="c-latin">Nephila sp.</span>
+          <span class="c-text">Her dragline silk is, by weight, <b>tougher than Kevlar</b> — the second material in this section we cannot yet manufacture, after the barnacle&rsquo;s cement. The web can span a forest path; the gold is real, and it is structural.</span>
+          <span class="c-meta">Silk stronger than steel by weight &middot; Costa Rica</span></span>
       </figure>
     </div>
   </section>
@@ -217,26 +222,33 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="f-orange">
     <div class="band-head bc-orange"><span class="band-chip"></span><span class="band-name">Ginger</span><span class="band-hex">#FF7A33</span></div>
     <div class="frames">
-      <figure class="f-md an">
+      <figure class="an">
         <button class="shot" data-full="images/globemallow-stalk.jpg" data-cap="Desert globemallow &middot; Sphaeralcea sp.">
           <img src="images/globemallow-stalk.jpg" loading="lazy" alt="A tall globemallow stalk of apricot-orange blooms against the eroded mesa and sky of the Painted Desert." /></button>
         <span class="cap"><span class="c-name">Desert globemallow</span><span class="c-latin">Sphaeralcea sp.</span>
           <span class="c-text">A pioneer species — it takes the disturbed, mineral-poor ground nothing else wants, blooming on the eroded remains of a <b>Late Triassic floodplain</b>.</span>
           <span class="c-meta">Chinle Fm. &middot; ~220 Ma &middot; Petrified Forest NP, AZ</span></span>
       </figure>
-      <figure class="f-lg lap-l an d1">
+      <figure class="wide an d1">
         <button class="shot" data-full="images/highland-cow.jpg" data-cap="Highland cow &middot; Bos taurus taurus">
           <img src="images/highland-cow.jpg" loading="lazy" alt="A ginger Highland cow with long horns and a heavy fringe over its eyes in a green Scottish field." /></button>
         <span class="cap"><span class="c-name">Highland cow</span><span class="c-latin">Bos taurus taurus</span>
           <span class="c-text">The same ginger, half a planet away, doing a different job. The fringe is a <b>double coat</b> — an oily outer layer that sheds the rain, a downy one beneath that holds the heat. Everything about the animal is an answer to Scottish weather.</span>
-          <span class="c-meta">Native breed &middot; Scotland [TK: locality]</span></span>
+          <span class="c-meta">Native breed &middot; Jedburgh, Scottish Borders</span></span>
       </figure>
-      <figure class="f-full drop an">
+      <figure class="wide an">
         <button class="shot" data-full="images/highland-calves.jpg" data-cap="Highland calves &middot; Scotland">
           <img src="images/highland-calves.jpg" loading="lazy" alt="Two shaggy ginger Highland calves in a wide green pasture, a sheep grazing in the distance." /></button>
         <span class="cap"><span class="c-name">Calves, unbothered</span><span class="c-latin">Bos taurus taurus</span>
           <span class="c-text">Born woolly and stay that way — dropped outdoors, raised outdoors, already growing the coat that will do the rest of the work for twenty years.</span>
-          <span class="c-meta">Outwintered &middot; hardy &middot; Scotland [TK: locality]</span></span>
+          <span class="c-meta">Outwintered &middot; hardy &middot; Jedburgh, Scottish Borders</span></span>
+      </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/hermit-crab.jpg" data-cap="Land hermit crab &middot; Coenobita sp.">
+          <img src="images/hermit-crab.jpg" loading="lazy" alt="A land hermit crab in a striped borrowed snail shell, clinging to the fibrous trunk of a palm." /></button>
+        <span class="cap"><span class="c-name">Land hermit crab</span><span class="c-latin">Coenobita sp.</span>
+          <span class="c-text">It grew no shell of its own — it <b>wears another animal&rsquo;s</b>, and trades up as it grows. On a Costa Rican coast the crabs line up by size to swap shells in sequence, the neatest recycling economy on the beach.</span>
+          <span class="c-meta">Borrowed shell &middot; vacancy chain &middot; Costa Rica</span></span>
       </figure>
     </div>
   </section>
@@ -245,29 +257,67 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="f-green">
     <div class="band-head bc-green"><span class="band-chip"></span><span class="band-name">Green</span><span class="band-hex">#8FBF3C</span></div>
     <div class="frames">
-      <figure class="f-lg an">
+      <figure class="wide an">
         <button class="shot" data-full="images/hummingbird.jpg" data-cap="Hummingbird &middot; Costa Rica">
           <img src="images/hummingbird.jpg" loading="lazy" alt="A hummingbird with iridescent green and blue plumage perched on a mossy branch, its long black bill lifted." /></button>
         <span class="cap"><span class="c-name">A trick of the light</span><span class="c-latin">Trochilidae</span>
           <span class="c-text">This green is not pigment. It is <b>structural colour</b> — microscopic layers in the feather that interfere with light, the same physics as a soap bubble or an oil slick. Turn the bird and the colour moves. The feather is not coloured; it is <i>engineered</i>.</span>
           <span class="c-meta">Cloud forest &middot; Costa Rica</span></span>
       </figure>
-      <figure class="f-md drop an d1">
+      <figure class="wide an d1">
         <button class="shot" data-full="images/hi-cattle.jpg" data-cap="Pasture cattle &middot; Hawai&#699;i">
           <img src="images/hi-cattle.jpg" loading="lazy" alt="A pale cream cow lying in green pasture under trees, black cattle nearby, palms and a thatched hut behind." /></button>
         <span class="cap"><span class="c-name">The reason the egrets came</span><span class="c-latin">Bos taurus</span>
           <span class="c-text">Cattle reached these islands in <b>1793</b>, a gift to Kamehameha I. A royal kapu protected them, so they multiplied into feral herds — and Mexican vaqueros were brought in to manage them. The <i>paniolo</i> were working cattle in Hawai&#699;i before the American cowboy existed.</span>
-          <span class="c-meta">Introduced 1793 &middot; paniolo country &middot; Hawai&#699;i [TK: island]</span></span>
+          <span class="c-meta">Introduced 1793 &middot; paniolo country &middot; O&#699;ahu, Hawai&#699;i</span></span>
       </figure>
 
+      <figure class="wide an">
+        <button class="shot" data-full="images/lichen.jpg" data-cap="Lungwort lichen &middot; Lobaria pulmonaria">
+          <img src="images/lichen.jpg" loading="lazy" alt="Ruffled blue-green lungwort lichen with a lobed, lung-like surface growing up the trunk of a conifer in montane forest." /></button>
+        <span class="cap"><span class="c-name">Lungwort lichen</span><span class="c-latin">Lobaria pulmonaria</span>
+          <span class="c-text">Not one organism but a <b>partnership</b> — a fungus farming an alga (and here a cyanobacterium too), one of the oldest collaborations on earth. It only grows where the air is clean, which makes it a living instrument: find it thriving and you have found an old, unbroken forest.</span>
+          <span class="c-meta">Symbiosis &middot; air-quality indicator &middot; Nova Scotia / Newfoundland</span></span>
+      </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/andes-cattle.jpg" data-cap="Criollo cattle &middot; Peruvian Andes">
+          <img src="images/andes-cattle.jpg" loading="lazy" alt="Two criollo cattle, one brown-and-white with horns and one pale tan, standing on a green Andean hillside above a still lake." /></button>
+        <span class="cap"><span class="c-name">Criollo cattle, high country</span><span class="c-latin">Bos taurus</span>
+          <span class="c-text">The third working cattle on this page — after the Hawaiian <i>paniolo</i> herds and the Scottish Highlands. These are <b>criollo</b>, descended from the first cattle the Spanish brought to the Americas, now bred five centuries into the thin air of the <b>high Andes</b>.</span>
+          <span class="c-meta">Criollo &middot; high-altitude &middot; Peru</span></span>
+      </figure>
       <div class="interlude an">
         <figure>
-          <button class="shot" data-full="images/gz-rainforest.jpg" data-cap="Genell Zuciya &middot; field work">
-            <img src="images/gz-rainforest.jpg" loading="lazy" alt="Genell Zuciya smiling on a rainforest trail beside a huge buttressed tree, binoculars around her neck, a field folder in hand." /></button>
+          <button class="shot" data-full="images/mush-2-handoff.jpg" data-cap="Genell Zuciya &middot; field work, Pacific Northwest">
+            <img src="images/mush-2-handoff.jpg" loading="lazy" alt="Genell Zuciya and another naturalist passing a large layered bracket fungus between them in a green Pacific Northwest forest, both smiling." /></button>
         </figure>
         <div class="who">
           <span class="who-tag">In the field</span>
-          <p class="who-text">Binoculars, a folder, and 3.8 billion years of R&amp;D to read. <b>This is the work</b> — standing at the base of something enormous and paying attention long enough to notice what it solved.</p>
+          <p class="who-text">A <b>bracket fungus</b> the size of a dinner plate, and the only reasonable response — hand it to someone else and marvel. This is the work: two people in a forest, passing wonder back and forth.</p>
+        </div>
+      </div>
+      <div class="frames" style="margin-top:2rem">
+        <figure class="wide an">
+          <button class="shot" data-full="images/mush-1-toss.jpg" data-cap="The toss &middot; Pacific Northwest">
+            <img src="images/mush-1-toss.jpg" loading="lazy" alt="Genell tosses a bracket fungus into the air toward a laughing companion in the forest." /></button>
+          <span class="cap"><span class="c-name">The toss</span>
+            <span class="c-text">It is heavier than it looks, and older than it looks — a bracket fungus lays down a new layer every year, like tree rings you can hold.</span></span>
+        </figure>
+        <figure class="wide an d1">
+          <button class="shot" data-full="images/mush-3-laugh.jpg" data-cap="The laugh &middot; Pacific Northwest">
+            <img src="images/mush-3-laugh.jpg" loading="lazy" alt="Both naturalists laughing, Genell holding the bracket fungus out to show it." /></button>
+          <span class="cap"><span class="c-name">The laugh</span>
+            <span class="c-text">Fieldwork looks like this more often than the textbooks admit.</span></span>
+        </figure>
+      </div>
+      <div class="interlude right an" style="margin-top:2.5rem">
+        <figure>
+          <button class="shot" data-full="images/gz-rainforest.jpg" data-cap="Genell Zuciya &middot; Costa Rica">
+            <img src="images/gz-rainforest.jpg" loading="lazy" alt="Genell Zuciya smiling on a rainforest trail beside a huge buttressed tree, binoculars around her neck, a field folder in hand." /></button>
+        </figure>
+        <div class="who">
+          <span class="who-tag">Costa Rica</span>
+          <p class="who-text">Binoculars, a folder, and 3.8 billion years of R&amp;D to read. <b>Standing at the base of something enormous</b> and paying attention long enough to notice what it solved.</p>
         </div>
       </div>
     </div>
@@ -277,12 +327,19 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="f-white">
     <div class="band-head bc-white"><span class="band-chip"></span><span class="band-name">Bone</span><span class="band-hex">#F4F0EA</span></div>
     <div class="frames">
-      <figure class="f-full an">
+      <figure class="wide an">
+        <button class="shot" data-full="images/pearly-everlasting.jpg" data-cap="Pearly everlasting &middot; Anaphalis margaritacea">
+          <img src="images/pearly-everlasting.jpg" loading="lazy" alt="Clusters of small papery white pearly-everlasting flowers with yellow centres, a tiny orange butterfly perched among them." /></button>
+        <span class="cap"><span class="c-name">Pearly everlasting</span><span class="c-latin">Anaphalis margaritacea</span>
+          <span class="c-text">Another <b>fire-follower</b> — it moves onto burned and broken ground first, and its papery bracts hold their white long after true petals would have gone. Here a small copper butterfly works the flowers, which are a larval host plant for painted ladies.</span>
+          <span class="c-meta">Fire-follower &middot; Nova Scotia / Newfoundland</span></span>
+      </figure>
+      <figure class="wide an">
         <button class="shot" data-full="images/egret.jpg" data-cap="Cattle egret &middot; Bubulcus ibis">
           <img src="images/egret.jpg" loading="lazy" alt="A white cattle egret with buff crown plumes in bright green grass, its orange-red bill catching the light." /></button>
         <span class="cap"><span class="c-name">Cattle egret</span><span class="c-latin">Bubulcus ibis</span>
           <span class="c-text">Released in <b>1959</b> to eat the flies off the cattle above — the same bargain the islands made with the myna a century earlier. It follows livestock for a living: hooves stir the grass, insects jump, the egret is already there.</span>
-          <span class="c-meta">Introduced 1959 &middot; pest control &middot; Hawai&#699;i [TK: island]</span></span>
+          <span class="c-meta">Introduced 1959 &middot; pest control &middot; O&#699;ahu, Hawai&#699;i</span></span>
       </figure>
     </div>
   </section>
@@ -291,14 +348,14 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="f-blue">
     <div class="band-head bc-blue"><span class="band-chip"></span><span class="band-name">Sky</span><span class="band-hex">#5489CF &middot; measured</span></div>
     <div class="frames">
-      <figure class="f-lg an">
+      <figure class="wide an">
         <button class="shot" data-full="images/myna.jpg" data-cap="Common myna &middot; Acridotheres tristis">
           <img src="images/myna.jpg" loading="lazy" alt="A common myna, brown-bodied with a black head and yellow beak and eye patch, on a power line against clear blue sky." /></button>
         <span class="cap"><span class="c-name">Common myna</span><span class="c-latin">Acridotheres tristis</span>
           <span class="c-text">Brought here in <b>1865</b> to eat armyworms in the cane fields — a biological control that worked, and then kept going. Now one of the most successful birds on earth, and sitting on our wire, watching.</span>
-          <span class="c-meta">Introduced 1865 &middot; Hawai&#699;i [TK: island]</span></span>
+          <span class="c-meta">Introduced 1865 &middot; O&#699;ahu, Hawai&#699;i</span></span>
       </figure>
-      <figure class="f-md drop an d1">
+      <figure class="wide an d1">
         <button class="shot" data-full="images/globemallow-vista.jpg" data-cap="Painted Desert &middot; Chinle Formation, Arizona">
           <img src="images/globemallow-vista.jpg" loading="lazy" alt="An orange globemallow bloom in the foreground with the banded red and grey badlands of the Painted Desert behind it." /></button>
         <span class="cap"><span class="c-name">Painted Desert, from behind a flower</span><span class="c-latin">Chinle Formation</span>
@@ -308,16 +365,30 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
     </div>
   </section>
 
+  <!-- VIOLET -->
+  <section class="band" id="f-violet">
+    <div class="band-head" style="color:#9B7BD4"><span class="band-chip"></span><span class="band-name">Violet</span><span class="band-hex">#9B7BD4</span></div>
+    <div class="frames">
+      <figure class="an">
+        <button class="shot" data-full="images/geranium.jpg" data-cap="Wood cranesbill &middot; Geranium sylvaticum">
+          <img src="images/geranium.jpg" loading="lazy" alt="A wild violet-blue cranesbill flower backlit by low sun, pale veins radiating from a white centre, more blooms and buds behind it." /></button>
+        <span class="cap"><span class="c-name">Wood cranesbill</span><span class="c-latin">Geranium sylvaticum</span>
+          <span class="c-text">The pale veins running into the centre are <b>nectar guides</b> — the same runway-light trick as the foxglove two frames on, drawn in ultraviolet a bee can read and we mostly can&rsquo;t. When the flower is done, the seed pod coils like a spring and flicks the seeds away.</span>
+          <span class="c-meta">UV nectar guides &middot; spring-loaded seed &middot; Northern Newfoundland</span></span>
+      </figure>
+    </div>
+  </section>
+
   <!-- MAGENTA -->
   <section class="band" id="f-magenta">
     <div class="band-head bc-magenta"><span class="band-chip"></span><span class="band-name">Digitalis</span><span class="band-hex">#FF4FD8</span></div>
     <div class="frames">
-      <figure class="f-full an">
+      <figure class="an">
         <button class="shot" data-full="images/foxglove.jpg" data-cap="Foxglove &middot; Digitalis purpurea">
           <img src="images/foxglove.jpg" loading="lazy" alt="A foxglove stalk of magenta buds and green sepals against a soft green hillside." /></button>
         <span class="cap"><span class="c-name">Foxglove</span><span class="c-latin">Digitalis purpurea</span>
           <span class="c-text">The spotted throats are <b>runway lights</b> — nectar guides that steer a bumblebee to the back of the bell, where it must brush the anthers to get paid. The plant is also lethal, and it is heart medicine: digitalis slows and strengthens a failing heartbeat. Poison and cure, separated only by dose.</span>
-          <span class="c-meta">Cardiac glycosides &middot; bee-pollinated &middot; Scotland [TK: locality]</span></span>
+          <span class="c-meta">Cardiac glycosides &middot; bee-pollinated &middot; on the road to Loch Ness</span></span>
       </figure>
     </div>
   </section>
@@ -335,14 +406,14 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="s-vermilion">
     <div class="band-head bc-vermilion"><span class="band-chip"></span><span class="band-name">Vermilion</span><span class="band-hex">#E5502B</span></div>
     <div class="frames">
-      <figure class="f-md an">
+      <figure class="an">
         <button class="shot" data-full="images/doc-market.jpg" data-cap="Wet market &middot; Shanghai">
           <img src="images/doc-market.jpg" loading="lazy" alt="A Shanghai street market: split dried fish hang above tanks of live seafood, a red menu board on the wall, a man crouched checking his phone, another walking past with a bag." /></button>
         <span class="cap"><span class="c-name">Split fish, red menu</span>
           <span class="c-text">A wet market threaded into a restaurant front — dried fish overhead, live tanks at the curb, the whole day's specials in <b>red and gold</b> on the wall. Everything for sale is either still moving or drying in the open air.</span>
           <span class="c-meta">Wet market &middot; Shanghai</span></span>
       </figure>
-      <figure class="f-lg lap-l an d1">
+      <figure class="wide an d1">
         <button class="shot" data-full="images/doc-street.jpg" data-cap="Lane life &middot; Xinchang">
           <img src="images/doc-street.jpg" loading="lazy" alt="An old lane in Xinchang: a woman sews at a machine in a doorway while an older woman in a green headscarf sits outside laughing, red and gold shop signs above." /></button>
         <span class="cap"><span class="c-name">The seamstress and the laugh</span>
@@ -381,7 +452,7 @@ var io = new IntersectionObserver(function(es){
 document.querySelectorAll('.an').forEach(function(el){ io.observe(el); });
 
 var COLORS = {
-  'f-red':'#E8402E','f-orange':'#FF7A33','f-green':'#8FBF3C','f-white':'#F4F0EA','f-blue':'#5B93DB','f-magenta':'#FF4FD8',
+  'f-red':'#E8402E','f-orange':'#FF7A33','f-green':'#8FBF3C','f-white':'#F4F0EA','f-blue':'#5B93DB','f-violet':'#9B7BD4','f-magenta':'#FF4FD8',
   's-vermilion':'#E5502B'
 };
 var spy = new IntersectionObserver(function(es){
