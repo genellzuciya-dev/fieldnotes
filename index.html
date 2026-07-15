@@ -136,6 +136,23 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
 .lb-close{ position:absolute; top:1.2rem; right:1.8rem; background:none; border:0; cursor:pointer;
   font-family:'Syne',sans-serif; font-size:1.3rem; color:var(--bone); }
 
+
+/* hoof fungus horizontal strip */
+.hooffungus{ padding:3rem 2.5rem 1rem; }
+.hoof-tag{ font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.3em;
+           text-transform:uppercase; color:var(--ember); display:block; margin-bottom:0.7rem; }
+.hoof-title{ font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(1.5rem,3vw,2.2rem);
+             letter-spacing:-0.02em; line-height:1.05; margin-bottom:1rem; }
+.hoof-blurb{ font-family:'Instrument Serif',serif; font-size:1.05rem; color:var(--muted);
+             max-width:60ch; line-height:1.7; margin-bottom:2.2rem; }
+.hoof-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+.hoof-row figure{ margin:0; }
+.hoof-row .cap{ margin-top:0.7rem; }
+@media(max-width:760px){ .hoof-row{ grid-template-columns:1fr; gap:2rem; } }
+/* cap vertical/portrait photos so they never dominate */
+.shot img{ max-height:78vh; object-fit:cover; }
+.an.d2{ transition-delay:.32s; }
+
 @media(prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto; }
   .an{ opacity:1 !important; transform:none !important; transition:none; }
@@ -188,6 +205,32 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <h1 class="part-title">The <em>living</em> world</h1>
   <p class="part-blurb">Natural history, read as design. What each organism has already solved — and, often, what it was moved across the planet to do. Sequenced from scarlet to magenta.</p>
 </section>
+
+<section class="hooffungus" id="hoof">
+  <div class="hoof-head an">
+    <span class="hoof-tag">In the field &middot; Pacific Northwest</span>
+    <h2 class="hoof-title">A hoof fungus, passed hand to hand</h2>
+    <p class="hoof-blurb"><i>Fomes fomentarius</i> — the fungus &Ouml;tzi the Iceman carried five thousand years ago to start fires. It grows a new layer every year like tree rings you can hold, and it is the size of a dinner plate. The only reasonable response is to hand it to someone else and marvel.</p>
+  </div>
+  <div class="hoof-row">
+    <figure class="an">
+      <button class="shot" data-full="images/mush-1-toss.jpg" data-cap="The toss &middot; Fomes fomentarius">
+        <img src="images/mush-1-toss.jpg" loading="lazy" alt="Genell tosses a large layered hoof fungus into the air toward a laughing companion in a green forest." /></button>
+      <span class="cap"><span class="c-name">The toss</span></span>
+    </figure>
+    <figure class="an d1">
+      <button class="shot" data-full="images/mush-2-handoff.jpg" data-cap="The handoff &middot; Fomes fomentarius">
+        <img src="images/mush-2-handoff.jpg" loading="lazy" alt="Genell and another naturalist passing the large hoof fungus between them, both smiling." /></button>
+      <span class="cap"><span class="c-name">The handoff</span></span>
+    </figure>
+    <figure class="an d2">
+      <button class="shot" data-full="images/mush-3-laugh.jpg" data-cap="The laugh &middot; Fomes fomentarius">
+        <img src="images/mush-3-laugh.jpg" loading="lazy" alt="Both naturalists laughing, Genell holding the hoof fungus out to show it." /></button>
+      <span class="cap"><span class="c-name">The laugh</span></span>
+    </figure>
+  </div>
+</section>
+
 
 <main>
   <!-- SCARLET -->
@@ -286,30 +329,6 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">The third working cattle on this page — after the Hawaiian <i>paniolo</i> herds and the Scottish Highlands. These are <b>criollo</b>, descended from the first cattle the Spanish brought to the Americas, now bred five centuries into the thin air of the <b>high Andes</b>.</span>
           <span class="c-meta">Criollo &middot; high-altitude &middot; Peru</span></span>
       </figure>
-      <div class="interlude an">
-        <figure>
-          <button class="shot" data-full="images/mush-2-handoff.jpg" data-cap="Genell Zuciya &middot; field work, Pacific Northwest">
-            <img src="images/mush-2-handoff.jpg" loading="lazy" alt="Genell Zuciya and another naturalist passing a large layered bracket fungus between them in a green Pacific Northwest forest, both smiling." /></button>
-        </figure>
-        <div class="who">
-          <span class="who-tag">In the field</span>
-          <p class="who-text">A <b>bracket fungus</b> the size of a dinner plate, and the only reasonable response — hand it to someone else and marvel. This is the work: two people in a forest, passing wonder back and forth.</p>
-        </div>
-      </div>
-      <div class="frames" style="margin-top:2rem">
-        <figure class="wide an">
-          <button class="shot" data-full="images/mush-1-toss.jpg" data-cap="The toss &middot; Pacific Northwest">
-            <img src="images/mush-1-toss.jpg" loading="lazy" alt="Genell tosses a bracket fungus into the air toward a laughing companion in the forest." /></button>
-          <span class="cap"><span class="c-name">The toss</span>
-            <span class="c-text">It is heavier than it looks, and older than it looks — a bracket fungus lays down a new layer every year, like tree rings you can hold.</span></span>
-        </figure>
-        <figure class="wide an d1">
-          <button class="shot" data-full="images/mush-3-laugh.jpg" data-cap="The laugh &middot; Pacific Northwest">
-            <img src="images/mush-3-laugh.jpg" loading="lazy" alt="Both naturalists laughing, Genell holding the bracket fungus out to show it." /></button>
-          <span class="cap"><span class="c-name">The laugh</span>
-            <span class="c-text">Fieldwork looks like this more often than the textbooks admit.</span></span>
-        </figure>
-      </div>
       <div class="interlude right an" style="margin-top:2.5rem">
         <figure>
           <button class="shot" data-full="images/gz-rainforest.jpg" data-cap="Genell Zuciya &middot; Costa Rica">
@@ -333,6 +352,13 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
         <span class="cap"><span class="c-name">Pearly everlasting</span><span class="c-latin">Anaphalis margaritacea</span>
           <span class="c-text">Another <b>fire-follower</b> — it moves onto burned and broken ground first, and its papery bracts hold their white long after true petals would have gone. Here a small copper butterfly works the flowers, which are a larval host plant for painted ladies.</span>
           <span class="c-meta">Fire-follower &middot; Nova Scotia / Newfoundland</span></span>
+      </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/thrombolites.jpg" data-cap="Thrombolites &middot; Flower&rsquo;s Cove, Newfoundland">
+          <img src="images/thrombolites.jpg" loading="lazy" alt="Pale domed mounds of thrombolite rock along a shoreline under a deep blue sky, a small Newfoundland fishing village on the far shore." /></button>
+        <span class="cap"><span class="c-name">Living rock</span><span class="c-latin">Thrombolite structures</span>
+          <span class="c-text">These pale mounds are <b>thrombolites</b> — rock built by microbial mats, cyanobacteria laying down stone one layer at a time. The Flower&rsquo;s Cove colonies are among the few places on earth you can stand beside the same kind of structure that dominated the shallows for <b>three billion years</b>, back when microbes were the whole of visible life.</span>
+          <span class="c-meta">Microbialite &middot; deep time &middot; Flower&rsquo;s Cove, Newfoundland</span></span>
       </figure>
       <figure class="wide an">
         <button class="shot" data-full="images/egret.jpg" data-cap="Cattle egret &middot; Bubulcus ibis">
