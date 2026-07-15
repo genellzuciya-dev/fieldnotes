@@ -145,6 +145,8 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
              letter-spacing:-0.02em; line-height:1.05; margin-bottom:1rem; }
 .hoof-blurb{ font-family:'Instrument Serif',serif; font-size:1.05rem; color:var(--muted);
              max-width:60ch; line-height:1.7; margin-bottom:2.2rem; }
+.hoofstrip{ padding:4.5rem 2.5rem 1rem; }
+@media(max-width:1000px){ .hoofstrip{ padding:3rem 1.3rem 0.5rem; } }
 .hoof-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
 .hoof-row figure{ margin:0; }
 .hoof-row .cap{ margin-top:0.7rem; }
@@ -199,6 +201,28 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
 </div>
 
 
+
+<section class="hoofstrip" id="intro-mushrooms">
+<div style="margin-bottom:1rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:#FF7A33;display:block;margin-bottom:0.7rem">In the field &middot; Pacific Northwest</span>
+      <p style="font-family:'Instrument Serif',serif;font-size:1.02rem;color:#8F7F8C;max-width:60ch;line-height:1.7;margin-bottom:1.6rem"><i>Fomes fomentarius</i>, the hoof fungus &Ouml;tzi the Iceman carried to start fires &mdash; the size of a dinner plate, and the only reasonable response is to hand it to someone else and marvel.</p>
+    </div>
+    <div class="hoof-row">
+      <figure class="wide an">
+      <button class="shot" data-full="images/mush-1-toss.jpg" data-cap="The toss &middot; Fomes fomentarius">
+        <img src="images/mush-1-toss.jpg" loading="lazy" alt="Genell tosses a large layered hoof fungus into the air toward a laughing companion in a green forest." /></button>
+      </figure>
+      <figure class="wide an">
+      <button class="shot" data-full="images/mush-2-handoff.jpg" data-cap="The handoff &middot; Fomes fomentarius">
+        <img src="images/mush-2-handoff.jpg" loading="lazy" alt="Genell and another naturalist passing the large hoof fungus between them, both smiling." /></button>
+      </figure>
+      <figure class="wide an">
+      <button class="shot" data-full="images/mush-3-laugh.jpg" data-cap="The laugh &middot; Fomes fomentarius">
+        <img src="images/mush-3-laugh.jpg" loading="lazy" alt="Both naturalists laughing, Genell holding the hoof fungus out to show it." /></button>
+      </figure>
+    </div>
+</section>
+
 <main id="spectrum">
   <section class="band" id="s-red">
     <div class="band-head" style="color:#E8402E"><span class="band-chip"></span><span class="band-name">Scarlet</span><span class="band-hex">#E8402E</span></div>
@@ -217,6 +241,19 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">They live where every wave would tear most animals off the rock. They hold on with a <b>protein cement</b> materials scientists still cannot reproduce, and feed by reaching into the water that is trying to kill them.</span>
           <span class="c-meta">Surf zone &middot; Pacific coast</span></span>
       </figure>
+      <figure class="an">
+        <button class="shot" data-full="images/doc-market.jpg" data-cap="Wet market &middot; Shanghai">
+          <img src="images/doc-market.jpg" loading="lazy" alt="A Shanghai street market: split dried fish hang above tanks of live seafood, a red menu board on the wall, a man crouched checking his phone, another walking past with a bag." /></button>
+        <span class="cap"><span class="c-name">Split fish, red menu</span>
+          <span class="c-text">A wet market threaded into a restaurant front — dried fish overhead, live tanks at the curb, the whole day's specials in <b>red and gold</b> on the wall. Everything for sale is either still moving or drying in the open air.</span>
+          <span class="c-meta">Wet market &middot; Shanghai</span></span>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="s-orange">
+    <div class="band-head" style="color:#FF7A33"><span class="band-chip"></span><span class="band-name">Amber &amp; Ochre</span><span class="band-hex">#FF7A33</span></div>
+    <div class="frames">
       <figure class="wide an">
         <button class="shot" data-full="images/orb-weaver.jpg" data-cap="Golden silk orb-weaver &middot; Nephila sp.">
           <img src="images/orb-weaver.jpg" loading="lazy" alt="A large golden silk orb-weaver hanging in its web, long black-and-yellow legs and a patterned rust-and-cream body, backlit gold silk behind it." /></button>
@@ -224,12 +261,6 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">Her dragline silk is, by weight, <b>tougher than Kevlar</b> — the second material in this section we cannot yet manufacture, after the barnacle&rsquo;s cement. The web can span a forest path; the gold is real, and it is structural.</span>
           <span class="c-meta">Silk stronger than steel by weight &middot; Costa Rica</span></span>
       </figure>
-    </div>
-  </section>
-
-  <section class="band" id="s-orange">
-    <div class="band-head" style="color:#FF7A33"><span class="band-chip"></span><span class="band-name">Ochre</span><span class="band-hex">#FF7A33</span></div>
-    <div class="frames">
       <figure class="an">
         <button class="shot" data-full="images/globemallow-stalk.jpg" data-cap="Desert globemallow &middot; Sphaeralcea sp.">
           <img src="images/globemallow-stalk.jpg" loading="lazy" alt="A tall globemallow stalk of apricot-orange blooms against the eroded mesa and sky of the Painted Desert." /></button>
@@ -245,18 +276,11 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-meta">Wax-print tailor &middot; Guinea, West Africa</span></span>
       </figure>
       <figure class="wide an">
-        <button class="shot" data-full="images/guinea-barber.jpg" data-cap="Barbershop &middot; Guinea, West Africa">
-          <img src="images/guinea-barber.jpg" loading="lazy" alt="An open-air barbershop: one man waits in the foreground while a barber clippers another man&rsquo;s head, a hand-painted mirror and price list on the wall behind." /></button>
-        <span class="cap"><span class="c-name">Sow Coiffure</span>
-          <span class="c-text">The prices are painted straight onto the mirror frame &mdash; <i>barbe 1500, coiffure 2500</i>. An open-air shop, a single pair of clippers, and a steady line of men waiting their turn in the shade.</span>
-          <span class="c-meta">Street barbershop &middot; Guinea, West Africa</span></span>
-      </figure>
-      <figure class="wide an">
-        <button class="shot" data-full="images/hermit-crab.jpg" data-cap="Land hermit crab &middot; Coenobita sp.">
-          <img src="images/hermit-crab.jpg" loading="lazy" alt="A land hermit crab in a striped borrowed snail shell, clinging to the fibrous trunk of a palm." /></button>
-        <span class="cap"><span class="c-name">Land hermit crab</span><span class="c-latin">Coenobita sp.</span>
-          <span class="c-text">It grew no shell of its own — it <b>wears another animal&rsquo;s</b>, and trades up as it grows. On a Costa Rican coast the crabs line up by size to swap shells in sequence, the neatest recycling economy on the beach.</span>
-          <span class="c-meta">Borrowed shell &middot; vacancy chain &middot; Costa Rica</span></span>
+        <button class="shot" data-full="images/doc-street.jpg" data-cap="Lane life &middot; Xinchang">
+          <img src="images/doc-street.jpg" loading="lazy" alt="An old lane in Xinchang: a woman sews at a machine in a doorway while an older woman in a green headscarf sits outside laughing, red and gold shop signs above." /></button>
+        <span class="cap"><span class="c-name">The seamstress and the laugh</span>
+          <span class="c-text">Two generations of a lane, a few feet apart — one at the sewing machine in the dark of the shop, one in the sun outside, <b>caught mid-laugh</b>. The work and the rest, in one frame.</span>
+          <span class="c-meta">Old town lane &middot; Xinchang</span></span>
       </figure>
     </div>
   </section>
@@ -290,25 +314,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
 
   <section class="band" id="s-green">
     <div class="band-head" style="color:#8FBF3C"><span class="band-chip"></span><span class="band-name">Green</span><span class="band-hex">#8FBF3C</span></div>
-    <div style="margin-bottom:1rem">
-      <span style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:#FF7A33;display:block;margin-bottom:0.7rem">In the field &middot; Pacific Northwest</span>
-      <p style="font-family:'Instrument Serif',serif;font-size:1.02rem;color:#8F7F8C;max-width:60ch;line-height:1.7;margin-bottom:1.6rem"><i>Fomes fomentarius</i>, the hoof fungus &Ouml;tzi the Iceman carried to start fires &mdash; the size of a dinner plate, and the only reasonable response is to hand it to someone else and marvel.</p>
-    </div>
-    <div class="hoof-row">
-      <figure class="wide an">
-      <button class="shot" data-full="images/mush-1-toss.jpg" data-cap="The toss &middot; Fomes fomentarius">
-        <img src="images/mush-1-toss.jpg" loading="lazy" alt="Genell tosses a large layered hoof fungus into the air toward a laughing companion in a green forest." /></button>
-      </figure>
-      <figure class="wide an">
-      <button class="shot" data-full="images/mush-2-handoff.jpg" data-cap="The handoff &middot; Fomes fomentarius">
-        <img src="images/mush-2-handoff.jpg" loading="lazy" alt="Genell and another naturalist passing the large hoof fungus between them, both smiling." /></button>
-      </figure>
-      <figure class="wide an">
-      <button class="shot" data-full="images/mush-3-laugh.jpg" data-cap="The laugh &middot; Fomes fomentarius">
-        <img src="images/mush-3-laugh.jpg" loading="lazy" alt="Both naturalists laughing, Genell holding the hoof fungus out to show it." /></button>
-      </figure>
-    </div>
-    <div class="frames" style="margin-top:2.5rem">
+    <div class="frames">
       <figure class="wide an">
         <button class="shot" data-full="images/hummingbird.jpg" data-cap="Hummingbird &middot; Costa Rica">
           <img src="images/hummingbird.jpg" loading="lazy" alt="A hummingbird with iridescent green and blue plumage perched on a mossy branch, its long black bill lifted." /></button>
@@ -322,13 +328,6 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
         <span class="cap"><span class="c-name">The reason the egrets came</span><span class="c-latin">Bos taurus</span>
           <span class="c-text">Cattle reached these islands in <b>1793</b>, a gift to Kamehameha I. A royal kapu protected them, so they multiplied into feral herds — and Mexican vaqueros were brought in to manage them. The <i>paniolo</i> were working cattle in Hawai&#699;i before the American cowboy existed.</span>
           <span class="c-meta">Introduced 1793 &middot; paniolo country &middot; O&#699;ahu, Hawai&#699;i</span></span>
-      </figure>
-      <figure class="an">
-        <button class="shot" data-full="images/pearly-everlasting.jpg" data-cap="Pearly everlasting &middot; Anaphalis margaritacea">
-          <img src="images/pearly-everlasting.jpg" loading="lazy" alt="Clusters of small papery white pearly-everlasting flowers with yellow centres, a tiny orange butterfly perched among them." /></button>
-        <span class="cap"><span class="c-name">Pearly everlasting</span><span class="c-latin">Anaphalis margaritacea</span>
-          <span class="c-text">Another <b>fire-follower</b> — it moves onto burned and broken ground first, and its papery bracts hold their white long after true petals would have gone. Here a small copper butterfly works the flowers, which are a larval host plant for painted ladies.</span>
-          <span class="c-meta">Fire-follower &middot; Nova Scotia / Newfoundland</span></span>
       </figure>
       <figure>
           <button class="shot" data-full="images/gz-rainforest.jpg" data-cap="Genell Zuciya &middot; Costa Rica">
@@ -346,6 +345,33 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
         <span class="cap"><span class="c-name">Cattle egret</span><span class="c-latin">Bubulcus ibis</span>
           <span class="c-text">Released in <b>1959</b> to eat the flies off the cattle above — the same bargain the islands made with the myna a century earlier. It follows livestock for a living: hooves stir the grass, insects jump, the egret is already there.</span>
           <span class="c-meta">Introduced 1959 &middot; pest control &middot; O&#699;ahu, Hawai&#699;i</span></span>
+      </figure>
+      <figure class="an">
+        <button class="shot" data-full="images/pearly-everlasting.jpg" data-cap="Pearly everlasting &middot; Anaphalis margaritacea">
+          <img src="images/pearly-everlasting.jpg" loading="lazy" alt="Clusters of small papery white pearly-everlasting flowers with yellow centres, a tiny orange butterfly perched among them." /></button>
+        <span class="cap"><span class="c-name">Pearly everlasting</span><span class="c-latin">Anaphalis margaritacea</span>
+          <span class="c-text">Another <b>fire-follower</b> — it moves onto burned and broken ground first, and its papery bracts hold their white long after true petals would have gone. Here a small copper butterfly works the flowers, which are a larval host plant for painted ladies.</span>
+          <span class="c-meta">Fire-follower &middot; Nova Scotia / Newfoundland</span></span>
+      </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/hermit-crab.jpg" data-cap="Land hermit crab &middot; Coenobita sp.">
+          <img src="images/hermit-crab.jpg" loading="lazy" alt="A land hermit crab in a striped borrowed snail shell, clinging to the fibrous trunk of a palm." /></button>
+        <span class="cap"><span class="c-name">Land hermit crab</span><span class="c-latin">Coenobita sp.</span>
+          <span class="c-text">It grew no shell of its own — it <b>wears another animal&rsquo;s</b>, and trades up as it grows. On a Costa Rican coast the crabs line up by size to swap shells in sequence, the neatest recycling economy on the beach.</span>
+          <span class="c-meta">Borrowed shell &middot; vacancy chain &middot; Costa Rica</span></span>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="s-slate">
+    <div class="band-head" style="color:#8A97A6"><span class="band-chip"></span><span class="band-name">Slate</span><span class="band-hex">#8A97A6</span></div>
+    <div class="frames">
+      <figure class="wide an">
+        <button class="shot" data-full="images/guinea-barber.jpg" data-cap="Barbershop &middot; Guinea, West Africa">
+          <img src="images/guinea-barber.jpg" loading="lazy" alt="An open-air barbershop: one man waits in the foreground while a barber clippers another man&rsquo;s head, a hand-painted mirror and price list on the wall behind." /></button>
+        <span class="cap"><span class="c-name">Sow Coiffure</span>
+          <span class="c-text">The prices are painted straight onto the mirror frame &mdash; <i>barbe 1500, coiffure 2500</i>. An open-air shop, a single pair of clippers, and a steady line of men waiting their turn in the shade.</span>
+          <span class="c-meta">Street barbershop &middot; Guinea, West Africa</span></span>
       </figure>
     </div>
   </section>
@@ -368,26 +394,6 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-meta">~220 Ma &middot; Petrified Forest NP, AZ</span></span>
       </figure>
       <figure class="an">
-        <button class="shot" data-full="images/doc-market.jpg" data-cap="Wet market &middot; Shanghai">
-          <img src="images/doc-market.jpg" loading="lazy" alt="A Shanghai street market: split dried fish hang above tanks of live seafood, a red menu board on the wall, a man crouched checking his phone, another walking past with a bag." /></button>
-        <span class="cap"><span class="c-name">Split fish, red menu</span>
-          <span class="c-text">A wet market threaded into a restaurant front — dried fish overhead, live tanks at the curb, the whole day's specials in <b>red and gold</b> on the wall. Everything for sale is either still moving or drying in the open air.</span>
-          <span class="c-meta">Wet market &middot; Shanghai</span></span>
-      </figure>
-      <figure class="wide an">
-        <button class="shot" data-full="images/doc-street.jpg" data-cap="Lane life &middot; Xinchang">
-          <img src="images/doc-street.jpg" loading="lazy" alt="An old lane in Xinchang: a woman sews at a machine in a doorway while an older woman in a green headscarf sits outside laughing, red and gold shop signs above." /></button>
-        <span class="cap"><span class="c-name">The seamstress and the laugh</span>
-          <span class="c-text">Two generations of a lane, a few feet apart — one at the sewing machine in the dark of the shop, one in the sun outside, <b>caught mid-laugh</b>. The work and the rest, in one frame.</span>
-          <span class="c-meta">Old town lane &middot; Xinchang</span></span>
-      </figure>
-    </div>
-  </section>
-
-  <section class="band" id="s-violet">
-    <div class="band-head" style="color:#9B7BD4"><span class="band-chip"></span><span class="band-name">Violet</span><span class="band-hex">#9B7BD4</span></div>
-    <div class="frames">
-      <figure class="an">
         <button class="shot" data-full="images/geranium.jpg" data-cap="Wood cranesbill &middot; Geranium sylvaticum">
           <img src="images/geranium.jpg" loading="lazy" alt="A wild violet-blue cranesbill flower backlit by low sun, pale veins radiating from a white centre, more blooms and buds behind it." /></button>
         <span class="cap"><span class="c-name">Wood cranesbill</span><span class="c-latin">Geranium sylvaticum</span>
@@ -398,7 +404,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   </section>
 
   <section class="band" id="s-magenta">
-    <div class="band-head" style="color:#FF4FD8"><span class="band-chip"></span><span class="band-name">Digitalis</span><span class="band-hex">#FF4FD8</span></div>
+    <div class="band-head" style="color:#C94FD8"><span class="band-chip"></span><span class="band-name">Purple &amp; Magenta</span><span class="band-hex">#C94FD8</span></div>
     <div class="frames">
       <figure class="an">
         <button class="shot" data-full="images/foxglove.jpg" data-cap="Foxglove &middot; Digitalis purpurea">
@@ -438,7 +444,7 @@ var io = new IntersectionObserver(function(es){
 }, { threshold:0.12, rootMargin:'0px 0px -50px 0px' });
 document.querySelectorAll('.an').forEach(function(el){ io.observe(el); });
 
-var COLORS = { 's-red':'#E8402E','s-orange':'#FF7A33','s-ginger':'#D98A3D','s-green':'#8FBF3C','s-bone':'#F4F0EA','s-blue':'#5B93DB','s-violet':'#9B7BD4','s-magenta':'#FF4FD8' };
+var COLORS = { 's-red':'#E8402E','s-orange':'#FF7A33','s-ginger':'#D98A3D','s-green':'#8FBF3C','s-bone':'#F4F0EA','s-slate':'#8A97A6','s-blue':'#5B93DB','s-magenta':'#C94FD8' };
 var spy = new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(e.isIntersecting){ document.documentElement.style.setProperty('--accent', COLORS[e.target.id]); }
