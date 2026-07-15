@@ -147,11 +147,12 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
              max-width:60ch; line-height:1.7; margin-bottom:2.2rem; }
 .hoofstrip{ padding:4.5rem 2.5rem 1rem; }
 @media(max-width:1000px){ .hoofstrip{ padding:3rem 1.3rem 0.5rem; } }
-.hoof-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; max-width:560px; }
-.hoof-row figure{ margin:0; }
-.hoof-row .shot img{ aspect-ratio:4/3; object-fit:cover; }
+.hoof-row{ display:grid !important; grid-template-columns:repeat(3,1fr) !important; gap:0.8rem; max-width:560px; }
+.hoof-row figure{ margin:0 !important; min-width:0 !important; width:100% !important; max-width:100% !important; }
+.hoof-row .shot{ display:block; width:100% !important; }
+.hoof-row .shot img{ width:100% !important; height:auto !important; aspect-ratio:4/3; max-height:none !important; object-fit:cover; }
 .hoof-row .cap{ margin-top:0.7rem; }
-@media(max-width:760px){ .hoof-row{ grid-template-columns:repeat(3,1fr); gap:0.5rem; max-width:100%; } }
+@media(max-width:760px){ .hoof-row{ grid-template-columns:repeat(3,1fr) !important; gap:0.5rem; max-width:100%; } }
 /* cap vertical/portrait photos so they never dominate */
 .shot img{ max-height:78vh; object-fit:cover; }
 .an.d2{ transition-delay:.32s; }
@@ -209,15 +210,15 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
       <p style="font-family:'Instrument Serif',serif;font-size:1.02rem;color:#8F7F8C;max-width:60ch;line-height:1.7;margin-bottom:1.6rem"><i>Fomes fomentarius</i>, the hoof fungus &Ouml;tzi the Iceman carried to start fires &mdash; the size of a dinner plate, and the only reasonable response is to hand it to someone else and marvel.</p>
     </div>
     <div class="hoof-row">
-      <figure class="wide an">
+      <figure class="an">
       <button class="shot" data-full="images/mush-1-toss.jpg" data-cap="The toss &middot; Fomes fomentarius">
         <img src="images/mush-1-toss.jpg" loading="lazy" alt="Genell tosses a large layered hoof fungus into the air toward a laughing companion in a green forest." /></button>
       </figure>
-      <figure class="wide an">
+      <figure class="an">
       <button class="shot" data-full="images/mush-2-handoff.jpg" data-cap="The handoff &middot; Fomes fomentarius">
         <img src="images/mush-2-handoff.jpg" loading="lazy" alt="Genell and another naturalist passing the large hoof fungus between them, both smiling." /></button>
       </figure>
-      <figure class="wide an">
+      <figure class="an">
       <button class="shot" data-full="images/mush-3-laugh.jpg" data-cap="The laugh &middot; Fomes fomentarius">
         <img src="images/mush-3-laugh.jpg" loading="lazy" alt="Both naturalists laughing, Genell holding the hoof fungus out to show it." /></button>
       </figure>
@@ -275,6 +276,13 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
         <span class="cap"><span class="c-name">The tailor</span>
           <span class="c-text">A tape measure round his neck, a hand-cranked machine, and an armful of <b>wax-print cloth</b> — the whole shop the colour of the wall behind it. West African wax print carries its own language: patterns have names, and a well-chosen cloth says something the wearer means.</span>
           <span class="c-meta">Wax-print tailor &middot; Guinea, West Africa</span></span>
+      </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/myna.jpg" data-cap="Common myna &middot; Acridotheres tristis">
+          <img src="images/myna.jpg" loading="lazy" alt="A common myna, brown-bodied with a black head and bright yellow beak and eye patch, perched on a power line against a clear blue sky." /></button>
+        <span class="cap"><span class="c-name">Common myna</span><span class="c-latin">Acridotheres tristis</span>
+          <span class="c-text">Brought here in <b>1865</b> to eat armyworms in the cane fields &mdash; a biological control that worked, and then kept going. Now one of the most successful birds on earth, and sitting on our wire, watching.</span>
+          <span class="c-meta">Introduced 1865 &middot; O&#699;ahu, Hawai&#699;i</span></span>
       </figure>
     </div>
   </section>
@@ -377,34 +385,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
     </div>
   </section>
 
-  <section class="band" id="s-blue">
-    <div class="band-head" style="color:#5B93DB"><span class="band-chip"></span><span class="band-name">Blue</span><span class="band-hex">#5B93DB</span></div>
-    <div class="frames">
-      <figure class="an">
-        <button class="shot" data-full="images/myna.jpg" data-cap="Common myna &middot; Acridotheres tristis">
-          <img src="images/myna.jpg" loading="lazy" alt="A common myna, brown-bodied with a black head and yellow beak and eye patch, on a power line against clear blue sky." /></button>
-        <span class="cap"><span class="c-name">Common myna</span><span class="c-latin">Acridotheres tristis</span>
-          <span class="c-text">Brought here in <b>1865</b> to eat armyworms in the cane fields — a biological control that worked, and then kept going. Now one of the most successful birds on earth, and sitting on our wire, watching.</span>
-          <span class="c-meta">Introduced 1865 &middot; O&#699;ahu, Hawai&#699;i</span></span>
-      </figure>
-      <figure class="an">
-        <button class="shot" data-full="images/globemallow-vista.jpg" data-cap="Painted Desert &middot; Chinle Formation, Arizona">
-          <img src="images/globemallow-vista.jpg" loading="lazy" alt="An orange globemallow bloom in the foreground with the banded red and grey badlands of the Painted Desert behind it." /></button>
-        <span class="cap"><span class="c-name">Painted Desert, from behind a flower</span><span class="c-latin">Chinle Formation</span>
-          <span class="c-text">The banded hills are <b>Late Triassic mudstone</b>, laid down when this desert was a humid floodplain near the equator. Red where iron oxidised in dry air; grey where it did not. The colour <i>is</i> the climate record.</span>
-          <span class="c-meta">~220 Ma &middot; Petrified Forest NP, AZ</span></span>
-      </figure>
-      <figure class="an">
-        <button class="shot" data-full="images/geranium.jpg" data-cap="Wood cranesbill &middot; Geranium sylvaticum">
-          <img src="images/geranium.jpg" loading="lazy" alt="A wild violet-blue cranesbill flower backlit by low sun, pale veins radiating from a white centre, more blooms and buds behind it." /></button>
-        <span class="cap"><span class="c-name">Wood cranesbill</span><span class="c-latin">Geranium sylvaticum</span>
-          <span class="c-text">The pale veins running into the centre are <b>nectar guides</b> — the same runway-light trick as the foxglove two frames on, drawn in ultraviolet a bee can read and we mostly can&rsquo;t. When the flower is done, the seed pod coils like a spring and flicks the seeds away.</span>
-          <span class="c-meta">UV nectar guides &middot; spring-loaded seed &middot; Northern Newfoundland</span></span>
-      </figure>
-    </div>
-  </section>
-
-  <section class="band" id="s-magenta">
+    <section class="band" id="s-magenta">
     <div class="band-head" style="color:#C94FD8"><span class="band-chip"></span><span class="band-name">Purple &amp; Magenta</span><span class="band-hex">#C94FD8</span></div>
     <div class="frames">
       <figure class="an">
