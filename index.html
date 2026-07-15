@@ -249,6 +249,13 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">A wet market threaded into a restaurant front — dried fish overhead, live tanks at the curb, the whole day's specials in <b>red and gold</b> on the wall. Everything for sale is either still moving or drying in the open air.</span>
           <span class="c-meta">Wet market &middot; Shanghai</span></span>
       </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/pitcher-plant.jpg" data-cap="Purple pitcher plant &middot; Sarracenia purpurea">
+          <img src="images/pitcher-plant.jpg" loading="lazy" alt="Purple pitcher plant &middot; Sarracenia purpurea" /></button>
+        <span class="cap"><span class="c-name">The plant that eats</span><span class="c-latin">Sarracenia purpurea</span>
+          <span class="c-text">Newfoundland&rsquo;s provincial flower, and a <b>carnivore</b>. It grows in bogs so nutrient-poor that it gave up on soil and started eating animals instead &mdash; rain fills its pitcher, insects drown, enzymes do the rest. The maroon veining is a lure, drawing prey down into the trap.</span>
+          <span class="c-meta">Carnivorous &middot; bog specialist &middot; Newfoundland</span></span>
+      </figure>
     </div>
   </section>
 
@@ -406,9 +413,52 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
     </div>
   </section>
 
-    <section class="band" id="s-magenta">
+      <!-- BLUE -->
+  <section class="band" id="s-blue">
+    <div class="band-head" style="color:#5B93DB"><span class="band-chip"></span><span class="band-name">Blue</span><span class="band-hex">#5B93DB</span></div>
+    <div class="frames">
+      <figure class="wide an">
+        <button class="shot" data-full="images/nl-folded-rock.jpg" data-cap="Folded rock &middot; Newfoundland coast">
+          <img src="images/nl-folded-rock.jpg" loading="lazy" alt="Folded rock &middot; Newfoundland coast" /></button>
+        <span class="cap"><span class="c-name">Deep time, folded</span>
+          <span class="c-text">The grey rock in the foreground was once <b>flat layers of seabed</b>, bent into these swirls by the slow collision of continents. What looks like frozen liquid is stone that flowed &mdash; given enough pressure and enough time, rock behaves like taffy.</span>
+          <span class="c-meta">Deformed strata &middot; tectonic folding &middot; Newfoundland</span></span>
+      </figure>
+      <figure class="an">
+        <button class="shot" data-full="images/nl-boulders.jpg" data-cap="White boulders &middot; Newfoundland">
+          <img src="images/nl-boulders.jpg" loading="lazy" alt="White boulders &middot; Newfoundland" /></button>
+        <span class="cap"><span class="c-name">Rounded by the sea</span>
+          <span class="c-text">Pale boulders worn smooth on a Newfoundland shore, a fishing village strung along the far side of the water. The sea rounds everything it touches, slowly.</span>
+          <span class="c-meta">Wave-rounded &middot; Newfoundland</span></span>
+      </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/nl-bay.jpg" data-cap="Bay and village &middot; Newfoundland">
+          <img src="images/nl-bay.jpg" loading="lazy" alt="Bay and village &middot; Newfoundland" /></button>
+        <span class="cap"><span class="c-name">The village across the water</span>
+          <span class="c-text">A clear northern day on the Gulf of St. Lawrence &mdash; rock, water, sky, and a line of houses that have weathered a great many of these summers and the winters between them.</span>
+          <span class="c-meta">Coastal outport &middot; Newfoundland</span></span>
+      </figure>
+      <figure class="wide an">
+        <button class="shot" data-full="images/nl-cobble-beach.jpg" data-cap="Cobble beach &middot; Newfoundland">
+          <img src="images/nl-cobble-beach.jpg" loading="lazy" alt="Cobble beach &middot; Newfoundland" /></button>
+        <span class="cap"><span class="c-name">Where the cliff comes down</span>
+          <span class="c-text">A folded cliff meets a beach of red-brown cobbles it has been shedding for millennia. The rock above is the source; the stones below are its future, one storm at a time.</span>
+          <span class="c-meta">Cobble beach &middot; eroding cliff &middot; Newfoundland</span></span>
+      </figure>
+    </div>
+  </section>
+
+<section class="band" id="s-magenta">
     <div class="band-head" style="color:#C94FD8"><span class="band-chip"></span><span class="band-name">Purple &amp; Magenta</span><span class="band-hex">#C94FD8</span></div>
     <div class="frames">
+      <figure class="wide an">
+        <button class="shot" data-full="images/fireweed-grosmorne.jpg" data-cap="Fireweed &amp; the Tablelands &middot; Gros Morne">
+          <img src="images/fireweed-grosmorne.jpg" loading="lazy" alt="Fireweed &amp; the Tablelands &middot; Gros Morne" /></button>
+        <span class="cap"><span class="c-name">First after fire</span><span class="c-latin">Chamerion angustifolium</span>
+          <span class="c-text">Fireweed &mdash; named for how it <b>rushes into burned ground</b>, the first colour back after a fire or a clear-cut. Behind it stand the Tablelands of Gros Morne: flat-topped mountains of the Earth&rsquo;s <i>mantle</i>, rock from deep beneath the crust, shoved to the surface half a billion years ago.</span>
+          <span class="c-meta">Fire-follower &middot; Tablelands mantle rock &middot; Gros Morne, Newfoundland</span></span>
+      </figure>
+
       <figure class="an">
         <button class="shot" data-full="images/foxglove.jpg" data-cap="Foxglove &middot; Digitalis purpurea">
           <img src="images/foxglove.jpg" loading="lazy" alt="A foxglove stalk of magenta buds and green sepals against a soft green hillside." /></button>
@@ -447,7 +497,7 @@ var io = new IntersectionObserver(function(es){
 }, { threshold:0.12, rootMargin:'0px 0px -50px 0px' });
 document.querySelectorAll('.an').forEach(function(el){ io.observe(el); });
 
-var COLORS = { 's-red':'#E8402E','s-orange':'#FF7A33','s-ginger':'#D98A3D','s-green':'#8FBF3C','s-bone':'#F4F0EA','s-slate':'#8A97A6','s-blue':'#5B93DB','s-magenta':'#C94FD8' };
+var COLORS = { 's-red':'#E8402E','s-orange':'#FF7A33','s-ginger':'#D98A3D','s-green':'#8FBF3C','s-bone':'#F4F0EA','s-slate':'#8A97A6','s-blue':'#5B93DB','s-blue':'#5B93DB','s-magenta':'#C94FD8' };
 var spy = new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(e.isIntersecting){ document.documentElement.style.setProperty('--accent', COLORS[e.target.id]); }
