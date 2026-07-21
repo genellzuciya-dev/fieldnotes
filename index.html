@@ -77,8 +77,8 @@ nav{ position:fixed; inset:0 0 auto 0; z-index:50; display:flex; align-items:cen
          gap:2.5rem 1.6rem; align-items:start; }
 figure{ position:relative; margin:0; }
 figure.wide{ grid-column:auto; }
-.frames > figure:last-child:nth-child(odd){ grid-column:1 / -1; }
-.frames > figure:last-child:nth-child(odd) .shot img{ aspect-ratio:21/9; height:auto; }
+.frames > figure:last-child:nth-child(odd):not(.tall){ grid-column:1 / -1; }
+.frames > figure:last-child:nth-child(odd):not(.tall) .shot img{ aspect-ratio:21/9; height:auto; }
 .shot{ display:block; width:100%; border:0; padding:0; background:var(--ink2);
        overflow:hidden; cursor:zoom-in; }
 .shot img{ display:block; width:100%; aspect-ratio:3/2; height:auto; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.3,1); }
@@ -361,14 +361,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">Released in <b>1959</b> to eat the flies off the cattle above — the same bargain the islands made with the myna a century earlier. It follows livestock for a living: hooves stir the grass, insects jump, the egret is already there.</span>
           <span class="c-meta">Introduced 1959 &middot; pest control &middot; O&#699;ahu, Hawai&#699;i</span></span>
       </figure>
-      <figure class="tall an">
-        <button class="shot" data-full="images/pearly-everlasting.jpg" data-cap="Pearly everlasting &middot; Anaphalis margaritacea">
-          <img src="images/pearly-everlasting.jpg" loading="lazy" alt="Clusters of small papery white pearly-everlasting flowers with yellow centres, a tiny orange butterfly perched among them." /></button>
-        <span class="cap"><span class="c-name">Pearly everlasting</span><span class="c-latin">Anaphalis margaritacea</span>
-          <span class="c-text">Another <b>fire-follower</b> — it moves onto burned and broken ground first, and its papery bracts hold their white long after true petals would have gone. Here a small copper butterfly works the flowers, which are a larval host plant for painted ladies.</span>
-          <span class="c-meta">Fire-follower &middot; Nova Scotia / Newfoundland</span></span>
-      </figure>
-      <figure class="tall an">
+            <figure class="tall an">
         <button class="shot" data-full="images/hermit-crab.jpg" data-cap="Land hermit crab &middot; Coenobita sp.">
           <img src="images/hermit-crab.jpg" loading="lazy" alt="A land hermit crab in a striped borrowed snail shell, clinging to the fibrous trunk of a palm." /></button>
         <span class="cap"><span class="c-name">Land hermit crab</span><span class="c-latin">Coenobita sp.</span>
@@ -381,14 +374,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="s-slate">
     <div class="band-head" style="color:#8A97A6"><span class="band-chip"></span><span class="band-name">Slate</span><span class="band-hex">#8A97A6</span></div>
     <div class="frames">
-      <figure class="wide an">
-        <button class="shot" data-full="images/guinea-ruin.jpg" data-cap="Ruined pavilion &middot; Guinea, West Africa">
-          <img src="images/guinea-ruin.jpg" loading="lazy" alt="An abandoned concrete pavilion and walkway seen framed through a large circular opening in a weathered concrete block, pale overcast sky beyond." /></button>
-        <span class="cap"><span class="c-name">Seen through the ring</span>
-          <span class="c-text">An abandoned pavilion, framed through a hole in the concrete that once held something else. Structures outlast their purpose &mdash; the <b>bones of a plan</b> nobody finished, going back to grass and rust in the coastal damp.</span>
-          <span class="c-meta">Abandoned structure &middot; Guinea, West Africa</span></span>
-      </figure>
-      <figure class="pano wide an">
+            <figure class="pano wide an">
         <button class="shot" data-full="images/anole.jpg" data-cap="Anole &middot; Anolis sp.">
           <img src="images/anole.jpg" loading="lazy" alt="A grey-brown anole lizard clinging to a weathered wooden post, head lowered, its mottled scales a near-perfect match for the greyed wood grain." /></button>
         <span class="cap"><span class="c-name">Hiding in plain sight</span><span class="c-latin">Anolis sp.</span>
