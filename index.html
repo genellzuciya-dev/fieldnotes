@@ -78,10 +78,13 @@ nav{ position:fixed; inset:0 0 auto 0; z-index:50; display:flex; align-items:cen
 figure{ position:relative; margin:0; }
 figure.wide{ grid-column:auto; }
 .frames > figure:last-child:nth-child(odd){ grid-column:1 / -1; }
-.frames > figure:last-child:nth-child(odd) .shot img{ height:440px; }
+.frames > figure:last-child:nth-child(odd) .shot img{ aspect-ratio:21/9; height:auto; }
 .shot{ display:block; width:100%; border:0; padding:0; background:var(--ink2);
        overflow:hidden; cursor:zoom-in; }
-.shot img{ display:block; width:100%; height:440px; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.3,1); }
+.shot img{ display:block; width:100%; aspect-ratio:3/2; height:auto; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.3,1); }
+/* orientation frames — match the frame to the photo instead of forcing 440px */
+figure.tall .shot img{ aspect-ratio:3/4; }
+figure.pano .shot img{ aspect-ratio:2/1; }
 .shot:hover img, .shot:focus-visible img{ transform:scale(1.03); }
 .shot:focus-visible{ outline:2px solid currentColor; outline-offset:4px; }
 /* optional emphasis: a photo can span two columns when it deserves the room */
@@ -153,7 +156,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
 .hoof-row{ display:grid !important; grid-template-columns:repeat(3,1fr) !important; gap:1.2rem; max-width:100%; }
 .hoof-row figure{ margin:0 !important; min-width:0 !important; width:100% !important; max-width:100% !important; }
 .hoof-row .shot{ display:block; width:100% !important; }
-.hoof-row .shot img{ width:100% !important; height:440px !important; aspect-ratio:auto !important; object-fit:cover; }
+.hoof-row .shot img{ width:100% !important; aspect-ratio:4/3 !important; height:auto !important; object-fit:cover; }
 .hoof-row .cap{ margin-top:0.7rem; }
 @media(max-width:760px){ .hoof-row{ grid-template-columns:repeat(3,1fr) !important; gap:0.5rem; max-width:100%; } }
 /* cap vertical/portrait photos so they never dominate */
@@ -245,14 +248,14 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">They live where every wave would tear most animals off the rock. They hold on with a <b>protein cement</b> materials scientists still cannot reproduce, and feed by reaching into the water that is trying to kill them.</span>
           <span class="c-meta">Surf zone &middot; Pacific coast</span></span>
       </figure>
-      <figure class="an">
+      <figure class="tall an">
         <button class="shot" data-full="images/doc-market.jpg" data-cap="Wet market &middot; Shanghai">
           <img src="images/doc-market.jpg" loading="lazy" alt="A Shanghai street market: split dried fish hang above tanks of live seafood, a red menu board on the wall, a man crouched checking his phone, another walking past with a bag." /></button>
         <span class="cap"><span class="c-name">Split fish, red menu</span>
           <span class="c-text">A wet market threaded into a restaurant front — dried fish overhead, live tanks at the curb, the whole day's specials in <b>red and gold</b> on the wall. Everything for sale is either still moving or drying in the open air.</span>
           <span class="c-meta">Wet market &middot; Shanghai</span></span>
       </figure>
-      <figure class="an">
+      <figure class="tall an">
         <button class="shot" data-full="images/pitcher-plant.jpg" data-cap="Purple pitcher plant &middot; Sarracenia purpurea">
           <img src="images/pitcher-plant.jpg" loading="lazy" alt="Purple pitcher plant &middot; Sarracenia purpurea" /></button>
         <span class="cap"><span class="c-name">The plant that eats</span><span class="c-latin">Sarracenia purpurea</span>
@@ -272,7 +275,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">Her dragline silk is, by weight, <b>tougher than Kevlar</b> — the second material in this section we cannot yet manufacture, after the barnacle&rsquo;s cement. The web can span a forest path; the gold is real, and it is structural.</span>
           <span class="c-meta">Silk stronger than steel by weight &middot; Costa Rica</span></span>
       </figure>
-      <figure class="an">
+      <figure class="tall an">
         <button class="shot" data-full="images/globemallow-stalk.jpg" data-cap="Desert globemallow &middot; Sphaeralcea sp.">
           <img src="images/globemallow-stalk.jpg" loading="lazy" alt="A tall globemallow stalk of apricot-orange blooms against the eroded mesa and sky of the Painted Desert." /></button>
         <span class="cap"><span class="c-name">Desert globemallow</span><span class="c-latin">Sphaeralcea sp.</span>
@@ -299,7 +302,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="s-ginger">
     <div class="band-head" style="color:#D98A3D"><span class="band-chip"></span><span class="band-name">Ginger</span><span class="band-hex">#D98A3D</span></div>
     <div class="frames">
-      <figure class="an">
+      <figure class="tall an">
         <button class="shot" data-full="images/highland-cow.jpg" data-cap="Highland cow &middot; Bos taurus taurus">
           <img src="images/highland-cow.jpg" loading="lazy" alt="A ginger Highland cow with long horns and a heavy fringe over its eyes in a green Scottish field." /></button>
         <span class="cap"><span class="c-name">Highland cow</span><span class="c-latin">Bos taurus taurus</span>
@@ -365,14 +368,14 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">Released in <b>1959</b> to eat the flies off the cattle above — the same bargain the islands made with the myna a century earlier. It follows livestock for a living: hooves stir the grass, insects jump, the egret is already there.</span>
           <span class="c-meta">Introduced 1959 &middot; pest control &middot; O&#699;ahu, Hawai&#699;i</span></span>
       </figure>
-      <figure class="an">
+      <figure class="tall an">
         <button class="shot" data-full="images/pearly-everlasting.jpg" data-cap="Pearly everlasting &middot; Anaphalis margaritacea">
           <img src="images/pearly-everlasting.jpg" loading="lazy" alt="Clusters of small papery white pearly-everlasting flowers with yellow centres, a tiny orange butterfly perched among them." /></button>
         <span class="cap"><span class="c-name">Pearly everlasting</span><span class="c-latin">Anaphalis margaritacea</span>
           <span class="c-text">Another <b>fire-follower</b> — it moves onto burned and broken ground first, and its papery bracts hold their white long after true petals would have gone. Here a small copper butterfly works the flowers, which are a larval host plant for painted ladies.</span>
           <span class="c-meta">Fire-follower &middot; Nova Scotia / Newfoundland</span></span>
       </figure>
-      <figure class="wide an">
+      <figure class="tall an">
         <button class="shot" data-full="images/hermit-crab.jpg" data-cap="Land hermit crab &middot; Coenobita sp.">
           <img src="images/hermit-crab.jpg" loading="lazy" alt="A land hermit crab in a striped borrowed snail shell, clinging to the fibrous trunk of a palm." /></button>
         <span class="cap"><span class="c-name">Land hermit crab</span><span class="c-latin">Coenobita sp.</span>
@@ -392,7 +395,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">An abandoned pavilion, framed through a hole in the concrete that once held something else. Structures outlast their purpose &mdash; the <b>bones of a plan</b> nobody finished, going back to grass and rust in the coastal damp.</span>
           <span class="c-meta">Abandoned structure &middot; Guinea, West Africa</span></span>
       </figure>
-      <figure class="wide an">
+      <figure class="pano wide an">
         <button class="shot" data-full="images/anole.jpg" data-cap="Anole &middot; Anolis sp.">
           <img src="images/anole.jpg" loading="lazy" alt="A grey-brown anole lizard clinging to a weathered wooden post, head lowered, its mottled scales a near-perfect match for the greyed wood grain." /></button>
         <span class="cap"><span class="c-name">Hiding in plain sight</span><span class="c-latin">Anolis sp.</span>
@@ -420,28 +423,28 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   <section class="band" id="s-blue">
     <div class="band-head" style="color:#5B93DB"><span class="band-chip"></span><span class="band-name">Blue</span><span class="band-hex">#5B93DB</span></div>
     <div class="frames">
-      <figure class="wide an">
+      <figure class="pano wide an">
         <button class="shot" data-full="images/nl-folded-rock.jpg" data-cap="Folded rock &middot; Newfoundland coast">
           <img src="images/nl-folded-rock.jpg" loading="lazy" alt="Folded rock &middot; Newfoundland coast" /></button>
         <span class="cap"><span class="c-name">Deep time, folded</span>
           <span class="c-text">The grey rock in the foreground was once <b>flat layers of seabed</b>, bent into these swirls by the slow collision of continents. What looks like frozen liquid is stone that flowed &mdash; given enough pressure and enough time, rock behaves like taffy.</span>
           <span class="c-meta">Deformed strata &middot; tectonic folding &middot; Newfoundland</span></span>
       </figure>
-      <figure class="an">
+      <figure class="tall an">
         <button class="shot" data-full="images/nl-boulders.jpg" data-cap="White boulders &middot; Newfoundland">
           <img src="images/nl-boulders.jpg" loading="lazy" alt="White boulders &middot; Newfoundland" /></button>
         <span class="cap"><span class="c-name">Rounded by the sea</span>
           <span class="c-text">Pale boulders worn smooth on a Newfoundland shore, a fishing village strung along the far side of the water. The sea rounds everything it touches, slowly.</span>
           <span class="c-meta">Wave-rounded &middot; Newfoundland</span></span>
       </figure>
-      <figure class="wide an">
+      <figure class="pano wide an">
         <button class="shot" data-full="images/nl-bay.jpg" data-cap="Bay and village &middot; Newfoundland">
           <img src="images/nl-bay.jpg" loading="lazy" alt="Bay and village &middot; Newfoundland" /></button>
         <span class="cap"><span class="c-name">The village across the water</span>
           <span class="c-text">A clear northern day on the Gulf of St. Lawrence &mdash; rock, water, sky, and a line of houses that have weathered a great many of these summers and the winters between them.</span>
           <span class="c-meta">Coastal outport &middot; Newfoundland</span></span>
       </figure>
-      <figure class="wide an">
+      <figure class="pano wide an">
         <button class="shot" data-full="images/nl-cobble-beach.jpg" data-cap="Cobble beach &middot; Newfoundland">
           <img src="images/nl-cobble-beach.jpg" loading="lazy" alt="Cobble beach &middot; Newfoundland" /></button>
         <span class="cap"><span class="c-name">Where the cliff comes down</span>
@@ -454,7 +457,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
 <section class="band" id="s-magenta">
     <div class="band-head" style="color:#C94FD8"><span class="band-chip"></span><span class="band-name">Purple &amp; Magenta</span><span class="band-hex">#C94FD8</span></div>
     <div class="frames">
-      <figure class="wide an">
+      <figure class="tall an">
         <button class="shot" data-full="images/fireweed-grosmorne.jpg" data-cap="Fireweed &amp; the Tablelands &middot; Gros Morne">
           <img src="images/fireweed-grosmorne.jpg" loading="lazy" alt="Fireweed &amp; the Tablelands &middot; Gros Morne" /></button>
         <span class="cap"><span class="c-name">First after fire</span><span class="c-latin">Chamerion angustifolium</span>
@@ -462,7 +465,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-meta">Fire-follower &middot; Tablelands mantle rock &middot; Gros Morne, Newfoundland</span></span>
       </figure>
 
-      <figure class="an">
+      <figure class="tall an">
         <button class="shot" data-full="images/foxglove.jpg" data-cap="Foxglove &middot; Digitalis purpurea">
           <img src="images/foxglove.jpg" loading="lazy" alt="A foxglove stalk of magenta buds and green sepals against a soft green hillside." /></button>
         <span class="cap"><span class="c-name">Foxglove</span><span class="c-latin">Digitalis purpurea</span>
