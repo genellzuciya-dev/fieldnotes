@@ -266,7 +266,7 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
   </section>
 
   <section class="band" id="s-orange">
-    <div class="band-head" style="color:#FF7A33"><span class="band-chip"></span><span class="band-name">Amber &amp; Ochre</span><span class="band-hex">#FF7A33</span></div>
+    <div class="band-head" style="color:#FF7A33"><span class="band-chip"></span><span class="band-name">Amber, Ochre &amp; Ginger</span><span class="band-hex">#FF7A33</span></div>
     <div class="frames">
       <figure class="wide an">
         <button class="shot" data-full="images/orb-weaver.jpg" data-cap="Golden silk orb-weaver &middot; Nephila sp.">
@@ -296,12 +296,6 @@ footer{ margin-top:6rem; border-top:1px solid rgba(255,79,216,0.18); background:
           <span class="c-text">Brought here in <b>1865</b> to eat armyworms in the cane fields &mdash; a biological control that worked, and then kept going. Now one of the most successful birds on earth, and sitting on our wire, watching.</span>
           <span class="c-meta">Introduced 1865 &middot; O&#699;ahu, Hawai&#699;i</span></span>
       </figure>
-    </div>
-  </section>
-
-  <section class="band" id="s-ginger">
-    <div class="band-head" style="color:#D98A3D"><span class="band-chip"></span><span class="band-name">Ginger</span><span class="band-hex">#D98A3D</span></div>
-    <div class="frames">
       <figure class="tall an">
         <button class="shot" data-full="images/highland-cow.jpg" data-cap="Highland cow &middot; Bos taurus taurus">
           <img src="images/highland-cow.jpg" loading="lazy" alt="A ginger Highland cow with long horns and a heavy fringe over its eyes in a green Scottish field." /></button>
@@ -482,7 +476,7 @@ var io = new IntersectionObserver(function(es){
 }, { threshold:0.12, rootMargin:'0px 0px -50px 0px' });
 document.querySelectorAll('.an').forEach(function(el){ io.observe(el); });
 
-var COLORS = { 's-red':'#E8402E','s-orange':'#FF7A33','s-ginger':'#D98A3D','s-green':'#8FBF3C','s-bone':'#F4F0EA','s-slate':'#8A97A6','s-blue':'#5B93DB','s-blue':'#5B93DB','s-magenta':'#C94FD8' };
+var COLORS = { 's-red':'#E8402E','s-orange':'#FF7A33','s-green':'#8FBF3C','s-bone':'#F4F0EA','s-slate':'#8A97A6','s-blue':'#5B93DB','s-magenta':'#C94FD8' };
 var spy = new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(e.isIntersecting){ document.documentElement.style.setProperty('--accent', COLORS[e.target.id]); }
